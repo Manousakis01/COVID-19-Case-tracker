@@ -6,13 +6,11 @@ import java.util.logging.Logger;
 
 import javax.mail.Session;
 import javax.mail.Transport;
-import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Authenticator;
 import javax.mail.Message;
-import javax.mail.MessagingException;
 
 public class SendEmail {
 
@@ -25,7 +23,9 @@ public class SendEmail {
 			properties.put("mail.smtp.host", "smtp.gmail.com");
 			properties.put("mail.smtp.port", "587");
 			properties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
-			String myAccountEmail = "manousakismanou@gmail.com";
+			//Here Insert your Email Adress
+			String myAccountEmail = "";
+			//Here Insert your password
 			String password = "";
 			
 			Session session = Session.getInstance(properties, new Authenticator(){
@@ -46,7 +46,9 @@ public class SendEmail {
 				Message message = new MimeMessage(session);
 				message.setFrom(new InternetAddress(myAccountEmail));
 				message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepient));
+				//Here insert Subject
 				message.setSubject("My first Email from JAVA");
+				//Here insert the Email text
 				message.setText("Hey There, \n Look my email!");
 				return message;
 			} catch (Exception ex) {
