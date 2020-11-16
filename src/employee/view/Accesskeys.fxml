@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="employee.view.Logincontroller">
+   <center>
+      <FlowPane prefHeight="239.0" prefWidth="450.0" BorderPane.alignment="CENTER">
+         <children>
+            <FlowPane prefHeight="307.0" prefWidth="299.0">
+               <children>
+                  <TextField promptText="username">
+                     <FlowPane.margin>
+                        <Insets left="75.0" />
+                     </FlowPane.margin>
+                  </TextField>
+                  <TextField promptText="password">
+                     <FlowPane.margin>
+                        <Insets left="75.0" top="-120.0" />
+                     </FlowPane.margin>
+                  </TextField>
+                  <FlowPane prefHeight="200.0" prefWidth="298.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#goMenu" prefHeight="25.0" prefWidth="80.0" text="Login">
+                           <FlowPane.margin>
+                              <Insets left="110.0" top="20.0" />
+                           </FlowPane.margin>
+                        </Button>
+                     </children>
+                  </FlowPane>
+               </children>
+               <padding>
+                  <Insets top="70.0" />
+               </padding>
+               <FlowPane.margin>
+                  <Insets />
+               </FlowPane.margin>
+            </FlowPane>
+         </children>
+         <BorderPane.margin>
+            <Insets left="150.0" />
+         </BorderPane.margin>
+         <padding>
+            <Insets top="120.0" />
+         </padding>
+      </FlowPane>
+   </center>
+   <top>
+      <Label text="COVID-19 TRACKER" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Imprint MT Shadow" size="35.0" />
+         </font>
+      </Label>
+   </top>
+</BorderPane>
