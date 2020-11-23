@@ -7,10 +7,11 @@ import java.util.ArrayList;
 public class DBConnMain {
 	public static void main (String[] args)  throws Exception{
 		getConnection();
-		createTable();
-		post();
+		//createTable();
+		//post();
 		get();
 	}
+	/**Method DBConnMain.get() provides objects from sql.*/
 	public static ArrayList<String> get() throws Exception{
 	try {
 		Connection con = getConnection();
@@ -34,7 +35,7 @@ public class DBConnMain {
 	} catch(Exception e) {System.out.println(e);}	
 	return null;
 	}
-	
+	/**Connection with Data Base. Needs username, password and url or path for identification. */
 	public static Connection getConnection() throws Exception {
 		try {
 			String driver = "com.mysql.cj.jdbc.Driver";
@@ -52,7 +53,7 @@ public class DBConnMain {
 		} catch (Exception e) {System.out.println(e);}
 		return null;
 	}
-	
+	//Optional. It might be done by Mysql Workbench
 	public static void post() throws Exception{
 		
 		try {
@@ -84,6 +85,7 @@ public class DBConnMain {
 			System.out.println("Insert completed!");
 		}
 	}
+	//Optional. It might be done by Mysql Workbench
 	public static void createTable() throws Exception {
 		try {
 			Connection con = getConnection();
