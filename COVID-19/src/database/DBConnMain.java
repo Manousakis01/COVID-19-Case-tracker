@@ -1,8 +1,10 @@
 package database;
-import java.sql.*;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
-
-
 
 public class DBConnMain {
 	public static void main (String[] args)  throws Exception{
