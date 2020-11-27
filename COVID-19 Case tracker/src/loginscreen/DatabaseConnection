@@ -10,8 +10,9 @@ public class DatabaseConnection {
 	public Connection databaseLink;
 
 	public Connection getConnection() {
+		String databaseName = "login";
 		String databaseUser = "root";
-		String databasePassword = "entercode";
+		String databasePassword = "2001kazanis2001";
 		String url = "jdbc:mysql://localhost/login?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 
 		try {
