@@ -57,20 +57,18 @@ public class LogInController {
 	 public void validateLogin() {
 			DatabaseConnectionWithLogScr connectNow = new DatabaseConnectionWithLogScr();
 			Connection connectDB = connectNow.getConnection();
-
-			String verifyLogin = "SELECT count(1) FROM useracc WHERE username =  '" + usernameTextField.getText() + "' AND password ='" + enterPasswordField.getText() + " ' ";
+			// Verification. 
+			String verifyLogin = "SELECT username, password FROM useracc WHERE username =  '" + usernameTextField.getText() + "' AND password ='" + enterPasswordField.getText() + " ' ";
 
 			try {
 
 				Statement statement = connectDB.createStatement();
 				ResultSet queryResult = statement.executeQuery(verifyLogin);
-
-				while(queryResult.next()) {
-					if (queryResult.getInt(1) == 1) {
-						loginMessageLabel.setText("Congratulations!");
-					} else {
-						loginMessageLabel.setText("Invalid login. Please try again.");
-					}
+				//If query result is not empty means that user passed verification.
+				if (queryResult.next()) {
+					loginMessageLabel.setText("Congratulations!");
+				} else {
+					loginMessageLabel.setText("Invalid login. Please try again.");
 				}
 
 			} catch (Exception e) {
