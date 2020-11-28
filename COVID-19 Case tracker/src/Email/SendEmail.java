@@ -24,7 +24,7 @@ public class SendEmail {
 			properties.put("mail.smtp.port", "587");
 			properties.put("mail.smtp.ssl.trust", "smtp.gmail.com");
 			//Here Insert your Email Adress
-			String myAccountEmail = "";
+			String myAccountEmail = "m";
 			//Here Insert your password
 			String password = "";
 			
@@ -47,9 +47,9 @@ public class SendEmail {
 				message.setFrom(new InternetAddress(myAccountEmail));
 				message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepient));
 				//Here insert Subject
-				message.setSubject("My first Email from JAVA");
+				message.setSubject("TO email erxetai apo java");
 				//Here insert the Email text
-				message.setText("Hey There, \n Look my email!");
+				message.setText("");
 				return message;
 			} catch (Exception ex) {
 				Logger.getLogger(SendEmail.class.getName()).log(Level.SEVERE, null, ex);
