@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class DBfunctions {
 	public static void main (String []args) throws Exception {
 		Scanner sc = new Scanner(System.in);
-		System.out.println("Please enter URL. ");
+		System.out.println("Please enter URL. (jdbc:mysql://localhost:3306/DatabaseName) ");
 		String Url = sc.next();
 		System.out.println("Please enter USERNAME. ");
 		String Username = sc.next();
@@ -28,13 +28,13 @@ public class DBfunctions {
 		ArrayList<String> array = new ArrayList<String>();
 		while(result.next()) {
 			System.out.print(result.getInt("id") + " , ");
-			//System.out.println();
+			System.out.println();
 			System.out.print(result.getString("first_name") + " , ");
-			//System.out.println();
+			System.out.println();
 			System.out.print(result.getString("last_name") + " , ");
-			//System.out.println();
+			System.out.println();
 			System.out.print(result.getString("email") + " , ");
-			//System.out.println();
+			System.out.println();
 			System.out.print(result.getString("password") + " , ");
 			System.out.println();
 	
