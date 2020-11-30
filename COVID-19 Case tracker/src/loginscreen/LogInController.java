@@ -57,7 +57,7 @@ public class LogInController {
 	 public void validateLogin() {
 			DatabaseConnectionWithLogScr connectNow = new DatabaseConnectionWithLogScr();
 			Connection connectDB = connectNow.getConnection();
-			// Verification. 
+			// Verification.
 			String verifyLogin = "SELECT username, password FROM useracc WHERE username =  '" + usernameTextField.getText() + "' AND password ='" + enterPasswordField.getText() + " ' ";
 
 			try {

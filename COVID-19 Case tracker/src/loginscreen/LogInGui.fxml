@@ -12,15 +12,15 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="788.0" style="-fx-background-color: f0f8ff;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loginscreen.LogInController">
    <children>
-      <TextField fx:id="usernameTextField" layoutX="490.0" layoutY="168.0" promptText="Username" style="-fx-border-color: #3082B4 #3082B4;" />
-      <PasswordField fx:id="enterPasswordField" layoutX="489.0" layoutY="230.0" promptText="Password" style="-fx-border-color: #3082B4 #3082B4;" />
-      <Button fx:id="loginButttonn" layoutX="539.0" layoutY="302.0" mnemonicParsing="false" onAction="#loginButtonOnAcction" style="-fx-background-color: #3082B4;" text="Sign in" />
-      <ImageView fx:id="faceImageView" fitHeight="30.0" fitWidth="35.0" layoutX="451.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true">
+      <TextField layoutX="490.0" layoutY="168.0" promptText="Username" style="-fx-border-color: #3082B4 #3082B4;" />
+      <PasswordField layoutX="489.0" layoutY="230.0" promptText="Password" style="-fx-border-color: #3082B4 #3082B4;" />
+      <Button layoutX="546.0" layoutY="302.0" mnemonicParsing="false" style="-fx-background-color: #3082B4;" text="Sign in" />
+      <ImageView fitHeight="30.0" fitWidth="35.0" layoutX="451.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@302-3026464_png-file-svg-login-member-icon-png.png.jpeg" />
          </image>
       </ImageView>
-      <ImageView fx:id="lockImageView" fitHeight="30.0" fitWidth="35.0" layoutX="452.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="30.0" fitWidth="35.0" layoutX="452.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@203-2037461_lock-login-key-password-protected-safe-security-icon.png.jpeg" />
          </image>
@@ -36,11 +36,10 @@
             <Font size="30.0" />
          </font>
       </Text>
-      <ImageView fx:id="brandingImageView" fitHeight="343.0" fitWidth="521.0" layoutX="-89.0" layoutY="73.0" rotate="270.0">
+      <ImageView fitHeight="343.0" fitWidth="521.0" layoutX="-89.0" layoutY="73.0" rotate="270.0">
          <image>
             <Image url="@00a63dd4feb5282ca47e00624f412916.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="loginMessageLabel" layoutX="487.0" layoutY="268.0" prefHeight="17.0" prefWidth="151.0" />
    </children>
 </AnchorPane>
