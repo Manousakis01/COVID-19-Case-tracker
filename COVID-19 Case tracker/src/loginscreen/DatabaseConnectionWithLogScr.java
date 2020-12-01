@@ -1,17 +1,17 @@
 package loginscreen;
 
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 
 
-public class DatabaseConnection {
+public class DatabaseConnectionWithLogScr {
 	public Connection databaseLink;
 
 	public Connection getConnection() {
+		String databaseName = "login";
 		String databaseUser = "root";
-		String databasePassword = "entercode";
+		String databasePassword = "2001kazanis2001";
 		String url = "jdbc:mysql://localhost/login?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 
 		try {

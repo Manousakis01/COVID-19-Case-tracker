@@ -44,4 +44,3 @@
       <Label fx:id="loginMessageLabel" layoutX="487.0" layoutY="268.0" prefHeight="17.0" prefWidth="151.0" />
    </children>
 </AnchorPane>
-
