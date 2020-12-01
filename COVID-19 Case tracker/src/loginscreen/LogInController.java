@@ -49,6 +49,7 @@ public class LogInController {
 		} else {
 			loginMessageLabel.setText("Please insert your Username and Password");
 		}
+		
 		try {
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menu.fxml"));
 		Parent root1 = (Parent) fxmlLoader.load();
@@ -59,6 +60,7 @@ public class LogInController {
 			System.out.println("Can't load new window!");
 		}
 	}
+	
 
 	 @FXML
 	 void exitButtonPressed(MouseEvent event) {
