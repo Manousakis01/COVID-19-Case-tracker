@@ -1,6 +1,9 @@
 package loginscreen;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -46,6 +49,15 @@ public class LogInController {
 		} else {
 			loginMessageLabel.setText("Please insert your Username and Password");
 		}
+		try {
+		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menu.fxml"));
+		Parent root1 = (Parent) fxmlLoader.load();
+		Stage stage = new Stage();
+		stage.setScene(new Scene(root1));  
+		stage.show();
+		} catch (Exception e) {
+			System.out.println("Can't load new window!");
+		}
 	}
 
 	 @FXML
@@ -53,6 +65,7 @@ public class LogInController {
 	    Stage stage = (Stage) exitLabel.getScene().getWindow();
 	    stage.close();
 	 }
+	  
 
 	 public void validateLogin() {
 			DatabaseConnectionWithLogScr connectNow = new DatabaseConnectionWithLogScr();

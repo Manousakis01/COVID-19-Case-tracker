@@ -17,12 +17,12 @@
       <Button layoutX="546.0" layoutY="302.0" mnemonicParsing="false" style="-fx-background-color: #3082B4;" text="Sign in" />
       <ImageView fitHeight="30.0" fitWidth="35.0" layoutX="451.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@302-3026464_png-file-svg-login-member-icon-png.png.jpeg" />
+            <Image url="@Images%20-%20Icons/302-3026464_png-file-svg-login-member-icon-png.png.jpeg" />
          </image>
       </ImageView>
       <ImageView fitHeight="30.0" fitWidth="35.0" layoutX="452.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@203-2037461_lock-login-key-password-protected-safe-security-icon.png.jpeg" />
+            <Image url="@Images%20-%20Icons/203-2037461_lock-login-key-password-protected-safe-security-icon.png.jpeg" />
          </image>
       </ImageView>
       <Label fx:id="exitLabel" layoutX="768.0" layoutY="4.0" onMouseClicked="#exitButtonPressed" text="X">
@@ -38,7 +38,7 @@
       </Text>
       <ImageView fitHeight="343.0" fitWidth="521.0" layoutX="-89.0" layoutY="73.0" rotate="270.0">
          <image>
-            <Image url="@00a63dd4feb5282ca47e00624f412916.jpg" />
+            <Image url="@Images%20-%20Icons/00a63dd4feb5282ca47e00624f412916.jpg" />
          </image>
       </ImageView>
    </children>
