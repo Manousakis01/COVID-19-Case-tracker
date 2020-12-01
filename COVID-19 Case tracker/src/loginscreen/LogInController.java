@@ -23,6 +23,8 @@ import java.net.URL;
 
 public class LogInController {
 
+	// declare the items
+
 	@FXML
 	private Label loginMessageLabel;
 	@FXML
@@ -40,6 +42,10 @@ public class LogInController {
 	@FXML
 	private Label exitLabel;
 
+	/*When login Button is pressed checks if the textfields are empty,
+	 *if they are a message shows up,
+	and if they are not proceed to the method validateLogin */
+
 	public void loginButtonOnAcction(ActionEvent event) {
 		if (usernameTextField.getText().isBlank() == false && enterPasswordField.getText().isBlank() == false) {
 			validateLogin();
@@ -48,11 +54,18 @@ public class LogInController {
 		}
 	}
 
+	/*exitButtonPressed method just gives the x button the permission to close the window */
+
 	 @FXML
 	 void exitButtonPressed(MouseEvent event) {
 	    Stage stage = (Stage) exitLabel.getScene().getWindow();
 	    stage.close();
 	 }
+
+	 /*validateLogin method makes a new database connection,
+	  *then use sql code to check if the given username and password
+	  *are the same with those in the database.After the verification a message shows
+	  *up and inform the client about the verification status  */
 
 	 public void validateLogin() {
 			DatabaseConnectionWithLogScr connectNow = new DatabaseConnectionWithLogScr();
