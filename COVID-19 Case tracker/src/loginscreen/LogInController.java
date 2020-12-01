@@ -38,7 +38,7 @@ public class LogInController {
 	@FXML
 	private PasswordField enterPasswordField;
 	@FXML
-	private Button loginButttonn;
+	private Button loginButtonn;
 	@FXML
 	private Label exitLabel;
 
