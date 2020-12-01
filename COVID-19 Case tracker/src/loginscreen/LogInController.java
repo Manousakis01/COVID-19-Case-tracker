@@ -10,6 +10,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 
@@ -39,11 +41,18 @@ public class LogInController {
 	@FXML
 	private PasswordField enterPasswordField;
 	@FXML
-	private Button loginButttonn;
+	private Button loginButton;
 	@FXML
 	private Label exitLabel;
-
-	public void loginButtonOnAcction(ActionEvent event) {
+	@FXML
+	private AnchorPane anchorPane1;
+	@FXML
+	private Text txtDmsteam;
+	@FXML
+	private Text txtTitle;
+	
+	
+	public void loginButtonOnAction(ActionEvent event) {
 		if (usernameTextField.getText().isBlank() == false && enterPasswordField.getText().isBlank() == false) {
 			validateLogin();
 		} else {
