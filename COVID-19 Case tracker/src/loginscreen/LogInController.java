@@ -53,23 +53,14 @@ public class LogInController {
 	
 	
 	public void loginButtonOnAction(ActionEvent event) {
+		
 		if (usernameTextField.getText().isBlank() == false && enterPasswordField.getText().isBlank() == false) {
 			validateLogin();
 		} else {
 			loginMessageLabel.setText("Please insert your Username and Password");
 		}
-		
-		try {
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menu.fxml"));
-		Parent root1 = (Parent) fxmlLoader.load();
-		Stage stage = new Stage();
-		stage.setScene(new Scene(root1));  
-		stage.show();
-		} catch (Exception e) {
-			System.out.println("Can't load new window!");
-		}
 	}
-	
+	  
 
 	 @FXML
 	 void exitButtonPressed(MouseEvent event) {
