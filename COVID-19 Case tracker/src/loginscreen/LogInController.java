@@ -1,6 +1,10 @@
 package loginscreen;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -15,6 +19,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 
 
@@ -41,19 +46,22 @@ public class LogInController {
 	private Button loginButtonn;
 	@FXML
 	private Label exitLabel;
-	@FXML
-	private AnchorPane anchorPane1;
-	@FXML
-	private Text txtDmsteam;
-	@FXML
-	private Text txtTitle;
+	//@FXML
+	//private AnchorPane anchorPane1;
+	//@FXML
+	//private Text txtDmsteam;
+	//@FXML
+	//private Text txtTitle;
+	
+
 	
 	
 
 	/*When login Button is pressed checks if the textfields are empty,
 	 *if they are a message shows up,
 	and if they are not proceed to the method validateLogin */
-
+		
+	@FXML
 	public void loginButtonOnAcction(ActionEvent event) {
 		if (usernameTextField.getText().isBlank() == false && enterPasswordField.getText().isBlank() == false) {
 			validateLogin();
@@ -63,8 +71,7 @@ public class LogInController {
 	}
 
 	/*exitButtonPressed method just gives the x button the permission to close the window */
-
-
+	
 	 @FXML
 	 void exitButtonPressed(MouseEvent event) {
 	    Stage stage = (Stage) exitLabel.getScene().getWindow();
@@ -89,6 +96,17 @@ public class LogInController {
 				//If query result is not empty means that user passed verification.
 				if (queryResult.next()) {
 					loginMessageLabel.setText("Congratulations!");
+					try {
+						FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menu.fxml"));
+						Parent root1;
+						root1 = (Parent) fxmlLoader.load();
+						Stage stage = new Stage();
+						stage.setScene(new Scene(root1));  
+						stage.show();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				} else {
 					loginMessageLabel.setText("Invalid login. Please try again.");
 				}
