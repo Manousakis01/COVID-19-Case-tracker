@@ -34,7 +34,10 @@ public class DBConnMain {
 	
 		}
 		return array;
-	} catch(Exception e) {System.out.println(e);}	
+	} catch(Exception e) {
+		System.out.println(e);
+		
+		}	
 	return null;
 	}
 	/**Connection with Data Base. Needs username, password and url or path for identification. */
