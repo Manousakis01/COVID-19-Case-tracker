@@ -37,7 +37,7 @@ public class Users extends AbstractTableModel{
 		// Update status 
 		connectedToDatabase = true;
 		
-		//setQuery(SELECT_QUERY);
+		setQuery(SELECT_QUERY);
 	}
 	
 	/** Return type(class) of column.*/
@@ -131,4 +131,41 @@ public class Users extends AbstractTableModel{
 		
 		return null;
 	}
-}
+	/** New query */
+	public void steQuery(String query) 
+			throws SQLException, IllegalStateException {
+		// Ensures the connection
+				if (!connectedToDatabase)
+					throw new IllegalStateException("Not Connected to Database");
+				
+				//sets and excecutes query 
+				resultSet = statement.excecuteQuery(query);
+				
+				//takes metadata for resultSet
+				metaData = resultSet.getMetaData();
+				
+				//indicates row count
+				resultSet.last(); //go to last row
+				numberOfRows = resultSet.getRow(); //returns row number
+				
+				//informs JTable that the model changed
+				fireTableStractureChanged();
+	}
+	
+	/** closes Statement and Connection */
+	public void disconnectFromDtatabase() {
+		if (connectedtoDatabase) {
+			//closes Statement and Connection 
+			try {
+				resultSet.close();
+				statement.close();
+				conn.close();
+			} catch (SQLException sqle) {
+				sqle.printStackTrace();
+			} finally { 
+				//update connection status
+				connectedToDatabase = false;
+			}
+		}	
+	}
+} //end of class
