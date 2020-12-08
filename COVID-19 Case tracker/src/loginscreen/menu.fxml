@@ -89,7 +89,7 @@
                   <Image url="@Images%20-%20Icons/icons8-submit-resume-50.png" />
                </image>
             </ImageView>
-            <Button fx:id="helpButton" layoutX="47.0" layoutY="1033.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="82.0" style="-fx-background-color: transparent;" text="Help" textFill="#eeeeee" underline="true" />
+            <Button fx:id="helpButton" layoutX="47.0" layoutY="1033.0" mnemonicParsing="false" onAction="#helpButtonOnAction" prefHeight="28.0" prefWidth="82.0" style="-fx-background-color: transparent;" text="Help" textFill="#eeeeee" underline="true" />
             <ImageView fx:id="infoView" fitHeight="28.0" fitWidth="28.0" layoutX="28.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images%20-%20Icons/icons8-info-64.png" />
