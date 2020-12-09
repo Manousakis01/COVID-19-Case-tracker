@@ -14,49 +14,49 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane fx:id="borderPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loginscreen.MenuController">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="732.0" prefWidth="1302.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loginscreen.MenuController">
    <center>
-      <AnchorPane fx:id="statsAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1744.0" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="statsAnchor" minHeight="-Infinity" minWidth="-Infinity" prefHeight="732.0" prefWidth="1123.0" BorderPane.alignment="CENTER">
          <children>
-            <Circle fx:id="deathsCircle" fill="WHITE" layoutX="819.0" layoutY="604.0" radius="90.0" stroke="#006699" strokeType="INSIDE" strokeWidth="10.0" AnchorPane.leftAnchor="729.0" AnchorPane.rightAnchor="835.0" />
-            <Circle fx:id="victimsCircle" fill="WHITE" layoutX="819.0" layoutY="200.0" radius="90.0" stroke="#006699" strokeType="INSIDE" strokeWidth="10.0" AnchorPane.leftAnchor="729.0" AnchorPane.rightAnchor="835.0" />
-            <Circle fx:id="recoveredCircle" fill="WHITE" layoutX="819.0" layoutY="401.0" radius="90.0" stroke="#006699" strokeType="INSIDE" strokeWidth="10.0" AnchorPane.leftAnchor="729.0" AnchorPane.rightAnchor="835.0" />
-            <Text fx:id="deathsTxt" fill="#006699" layoutX="789.0" layoutY="624.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deaths" AnchorPane.leftAnchor="789.0" AnchorPane.rightAnchor="895.029296875">
+            <Circle fx:id="deathsCircle" fill="WHITE" layoutX="568.0" layoutY="411.0" radius="55.0" stroke="#006699" strokeType="INSIDE" strokeWidth="8.0" AnchorPane.leftAnchor="513.0" AnchorPane.rightAnchor="500.0" />
+            <Circle fx:id="victimsCircle" fill="WHITE" layoutX="564.0" layoutY="145.0" radius="55.0" stroke="#006699" strokeType="INSIDE" strokeWidth="8.0" AnchorPane.leftAnchor="509.0" AnchorPane.rightAnchor="504.0" />
+            <Circle fx:id="recoveredCircle" fill="WHITE" layoutX="568.0" layoutY="278.0" radius="55.0" stroke="#006699" strokeType="INSIDE" strokeWidth="8.0" AnchorPane.leftAnchor="513.0" AnchorPane.rightAnchor="500.0" />
+            <Text fx:id="deathsTxt" fill="#006699" layoutX="544.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deaths" AnchorPane.leftAnchor="544.0" AnchorPane.rightAnchor="531.0234375">
                <font>
-                  <Font size="20.0" />
+                  <Font size="16.0" />
                </font>
             </Text>
-            <Text fx:id="deathsNumTxt" layoutX="798.0" layoutY="590.0" strokeType="OUTSIDE" strokeWidth="0.0" text="170" wrappingWidth="42.3203125" AnchorPane.leftAnchor="798.0" AnchorPane.rightAnchor="903.6796875">
+            <Text fx:id="deathsNumTxt" layoutX="554.0" layoutY="406.0" strokeType="OUTSIDE" strokeWidth="0.0" text="170" AnchorPane.leftAnchor="554.0" AnchorPane.rightAnchor="540.259765625">
                <font>
-                  <Font size="24.0" />
+                  <Font size="18.0" />
                </font>
             </Text>
-            <Text fx:id="victimsTxt" fill="#006699" layoutX="788.0" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Victims" AnchorPane.leftAnchor="788.0" AnchorPane.rightAnchor="893.724609375">
+            <Text fx:id="victimsTxt" fill="#006699" layoutX="539.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Victims" AnchorPane.leftAnchor="539.0" AnchorPane.rightAnchor="534.1796875">
                <font>
-                  <Font size="20.0" />
+                  <Font size="16.0" />
                </font>
             </Text>
-            <Text fx:id="numVictimsTxt" layoutX="797.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="500" AnchorPane.leftAnchor="797.0" AnchorPane.rightAnchor="903.8515625">
+            <Text fx:id="numVictimsTxt" layoutX="548.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="500" AnchorPane.leftAnchor="548.0" AnchorPane.rightAnchor="542.638671875">
                <font>
-                  <Font size="24.0" />
+                  <Font size="18.0" />
                </font>
             </Text>
-            <Text fx:id="recoveredTxt" fill="#006699" layoutX="774.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recovered" AnchorPane.leftAnchor="774.0" AnchorPane.rightAnchor="879.755859375">
+            <Text fx:id="recoveredTxt" fill="#006699" layoutX="532.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recovered" AnchorPane.leftAnchor="532.0" AnchorPane.rightAnchor="518.8046875">
                <font>
-                  <Font size="20.0" />
+                  <Font size="16.0" />
                </font>
             </Text>
-            <Text fx:id="recoveredNumTxt" layoutX="798.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="200" AnchorPane.leftAnchor="798.0" AnchorPane.rightAnchor="903.30859375">
+            <Text fx:id="recoveredNumTxt" layoutX="552.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="200" AnchorPane.leftAnchor="552.0" AnchorPane.rightAnchor="538.9814453125">
                <font>
-                  <Font size="24.0" />
+                  <Font size="18.0" />
                </font>
             </Text>
-            <Text fx:id="welcomeTxt" layoutX="74.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to CovidFinder, here are some stats about the virus.">
+            <Text fx:id="welcomeTxt" layoutX="41.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here are some stats about the virus.">
                <font>
-                  <Font size="28.0" />
+                  <Font size="25.0" />
                </font>
             </Text>
-            <BarChart fx:id="barChart" barGap="5.0" layoutX="74.0" layoutY="155.0" title="Cases">
+            <BarChart fx:id="barChart" barGap="5.0" layoutX="19.0" layoutY="88.0" prefHeight="315.0" prefWidth="416.0" title="Cases">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
@@ -64,43 +64,43 @@
                 <NumberAxis side="LEFT" />
               </yAxis>
             </BarChart>
-            <PieChart fx:id="pieChart" layoutX="1070.0" layoutY="155.0" title="cases per region (%)" />
+            <PieChart fx:id="pieChart" layoutX="681.0" layoutY="88.0" prefHeight="315.0" prefWidth="416.0" title="cases per region (%)" />
          </children>
       </AnchorPane>
    </center>
    <left>
-      <AnchorPane fx:id="sideAnchor" prefHeight="908.0" prefWidth="176.0" style="-fx-background-color: #006699;" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="sideAnchor" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="732.0" prefWidth="179.0" style="-fx-background-color: #006699;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="statsButton" layoutY="368.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="176.0" style="-fx-background-color: #006699;" text="Stats" textFill="#eeeeee" />
-            <Button fx:id="infoButton" layoutY="327.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="176.0" style="-fx-background-color: #006699;" text="Info" textFill="#eeeeee" />
-            <Button fx:id="registerButton" layoutY="409.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="176.0" style="-fx-background-color: #006699;" text="Register" textFill="#eeeeee" />
-            <Button fx:id="updateButton" layoutY="451.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="176.0" style="-fx-background-color: #006699;" text="Update" textFill="#eeeeee" />
-            <ImageView fx:id="statsView" fitHeight="28.0" fitWidth="28.0" layoutX="28.0" layoutY="375.0" pickOnBounds="true" preserveRatio="true">
+            <Button fx:id="statsButton" layoutY="296.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="176.0" style="-fx-background-color: #006699;" text="Stats" textFill="#eeeeee" />
+            <Button fx:id="infoButton" layoutX="2.0" layoutY="252.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="176.0" style="-fx-background-color: #006699;" text="Info" textFill="#eeeeee" />
+            <Button fx:id="registerButton" layoutX="2.0" layoutY="338.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="42.0" prefWidth="176.0" style="-fx-background-color: #006699;" text="Register" textFill="#eeeeee" />
+            <Button fx:id="updateButton" layoutY="382.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="176.0" style="-fx-background-color: #006699;" text="Update" textFill="#eeeeee" />
+            <ImageView fx:id="statsView" fitHeight="28.0" fitWidth="28.0" layoutX="28.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images%20-%20Icons/icons8-combo-chart-50.png" />
                </image>
             </ImageView>
-            <Separator fx:id="sep2" layoutX="22.0" layoutY="410.0" prefHeight="0.0" prefWidth="135.0" />
-            <Separator fx:id="sep1" layoutX="22.0" layoutY="368.0" prefHeight="0.0" prefWidth="135.0" />
-            <Separator fx:id="sep3" layoutX="22.0" layoutY="450.0" prefHeight="0.0" prefWidth="135.0" />
-            <Separator fx:id="sep4" layoutX="22.0" layoutY="492.0" prefHeight="0.0" prefWidth="135.0" />
-            <ImageView fx:id="registerView" fitHeight="28.0" fitWidth="28.0" layoutX="28.0" layoutY="416.0" pickOnBounds="true" preserveRatio="true">
+            <Separator fx:id="sep2" layoutX="23.0" layoutY="337.0" prefHeight="0.0" prefWidth="135.0" />
+            <Separator fx:id="sep1" layoutX="23.0" layoutY="293.0" prefHeight="0.0" prefWidth="135.0" />
+            <Separator fx:id="sep3" layoutX="23.0" layoutY="379.0" prefHeight="0.0" prefWidth="135.0" />
+            <Separator fx:id="sep4" layoutX="23.0" layoutY="423.0" prefHeight="0.0" prefWidth="135.0" />
+            <ImageView fx:id="registerView" fitHeight="28.0" fitWidth="28.0" layoutX="28.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images%20-%20Icons/icons8-submit-resume-50.png" />
                </image>
             </ImageView>
-            <Button fx:id="helpButton" layoutX="47.0" layoutY="1033.0" mnemonicParsing="false" onAction="#helpButtonOnAction" prefHeight="28.0" prefWidth="82.0" style="-fx-background-color: transparent;" text="Help" textFill="#eeeeee" underline="true" />
-            <ImageView fx:id="infoView" fitHeight="28.0" fitWidth="28.0" layoutX="28.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true">
+            <Button fx:id="helpButton" layoutX="59.0" layoutY="690.0" mnemonicParsing="false" onAction="#helpButtonOnAction" prefHeight="28.0" prefWidth="82.0" style="-fx-background-color: transparent;" text="Help" textFill="#eeeeee" underline="true" />
+            <ImageView fx:id="infoView" fitHeight="28.0" fitWidth="28.0" layoutX="28.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images%20-%20Icons/icons8-info-64.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="updateView" fitHeight="28.0" fitWidth="28.0" layoutX="28.0" layoutY="458.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="updateView" fitHeight="28.0" fitWidth="28.0" layoutX="28.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images%20-%20Icons/icons8-edit-property-50.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="helpView" fitHeight="24.0" fitWidth="21.0" layoutX="46.0" layoutY="1037.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="helpView" fitHeight="24.0" fitWidth="21.0" layoutX="59.0" layoutY="694.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images%20-%20Icons/icons8-help-50.png" />
                </image>

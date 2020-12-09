@@ -1,10 +1,13 @@
 package loginscreen;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
@@ -19,7 +22,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class MenuController {
+public class MenuController implements Initializable{
 
     @FXML
     private BorderPane borderPane;
@@ -107,23 +110,52 @@ public class MenuController {
 
     @FXML
     private ImageView helpView;
+    
+    Parent root2;
+    Stage stage1;
+    @FXML
+    private Parent register;
 
     @FXML
     void helpButtonOnAction(ActionEvent event) {
     
     	try {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("manual.fxml"));
-			Parent root2;
 			root2 = (Parent) fxmlLoader.load();
-			Stage stage3 = new Stage();
-			stage3.setScene(new Scene(root2));  
-			stage3.setResizable(false);
-			stage3.initModality(Modality.APPLICATION_MODAL);
-			stage3.show();
+			stage1 = new Stage();
+			stage1.setScene(new Scene(root2));  
+			stage1.setResizable(false);
+			stage1.initModality(Modality.APPLICATION_MODAL);
+			stage1.show();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+    }
+   
+    @FXML
+    public void registerButtonOnAction(ActionEvent event) throws Exception {
+        borderPane.setCenter(register);
+    }
+  //  @FXML
+  /*  public void openPane2(ActionEvent event) throws Exception {
+        borderPane.setCenter(secondFxml);
+    } 
+    */
+    
+    @FXML
+    private Parent loadScene(String sc) throws IOException {
+        return FXMLLoader.load(getClass().getResource(sc));
+    }
+    
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        try {
+            register = loadScene("register.fxml");
+           // secondFxml =  loadScene("secondFxml.fxml");
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        };
     }
     
     
