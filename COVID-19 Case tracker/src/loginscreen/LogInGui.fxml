@@ -41,7 +41,7 @@
             <Image url="@Images%20-%20Icons/00a63dd4feb5282ca47e00624f412916.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="loginMessageLabel" layoutX="487.0" layoutY="268.0" prefHeight="17.0" prefWidth="151.0">
+      <Label fx:id="loginMessageLabel" alignment="CENTER" layoutX="444.0" layoutY="275.0" prefHeight="18.0" prefWidth="243.0">
          <font>
             <Font size="12.0" />
          </font></Label>

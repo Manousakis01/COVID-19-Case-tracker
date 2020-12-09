@@ -74,7 +74,7 @@
             <Button fx:id="statsButton" layoutY="296.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="170.0" style="-fx-background-color: #006699;" text="Stats" textFill="#eeeeee" />
             <Button fx:id="infoButton" layoutX="2.0" layoutY="252.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="168.0" style="-fx-background-color: #006699;" text="Info" textFill="#eeeeee" />
             <Button fx:id="registerButton" layoutX="2.0" layoutY="338.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="42.0" prefWidth="168.0" style="-fx-background-color: #006699;" text="Register" textFill="#eeeeee" />
-            <Button fx:id="updateButton" layoutY="382.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="170.0" style="-fx-background-color: #006699;" text="Update" textFill="#eeeeee" />
+            <Button fx:id="updateButton" layoutY="382.0" mnemonicParsing="false" onAction="#updateButtonOnAction" prefHeight="42.0" prefWidth="170.0" style="-fx-background-color: #006699;" text="Update" textFill="#eeeeee" />
             <ImageView fx:id="statsView" fitHeight="28.0" fitWidth="28.0" layoutX="28.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images%20-%20Icons/icons8-combo-chart-50.png" />

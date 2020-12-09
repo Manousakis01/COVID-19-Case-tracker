@@ -110,15 +110,16 @@ public class MenuController implements Initializable{
 
     @FXML
     private ImageView helpView;
-    
+
     Parent root2;
     Stage stage1;
     @FXML
     private Parent register;
+    private Parent update;
 
     @FXML
     void helpButtonOnAction(ActionEvent event) {
-    
+
     	try {
 			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("manual.fxml"));
 			root2 = (Parent) fxmlLoader.load();
@@ -132,31 +133,31 @@ public class MenuController implements Initializable{
 			e.printStackTrace();
 		}
     }
-   
+
     @FXML
     public void registerButtonOnAction(ActionEvent event) throws Exception {
         borderPane.setCenter(register);
     }
-  //  @FXML
-  /*  public void openPane2(ActionEvent event) throws Exception {
-        borderPane.setCenter(secondFxml);
-    } 
-    */
     
+    @FXML
+    public void updateButtonOnAction(ActionEvent event) throws Exception {
+        borderPane.setCenter(update);
+    }
+  
     @FXML
     private Parent loadScene(String sc) throws IOException {
         return FXMLLoader.load(getClass().getResource(sc));
     }
-    
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
             register = loadScene("register.fxml");
+            update = loadScene("update.fxml");
            // secondFxml =  loadScene("secondFxml.fxml");
         } catch (IOException ex) {
             ex.printStackTrace();
         };
     }
-    
     
 }
