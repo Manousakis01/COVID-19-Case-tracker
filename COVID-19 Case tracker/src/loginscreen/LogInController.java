@@ -11,6 +11,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 
@@ -52,8 +54,8 @@ public class LogInController {
 	//private Text txtDmsteam;
 	//@FXML
 	//private Text txtTitle;
-	
-
+	Parent root1;
+	Stage stage;
 	
 	
 
@@ -63,6 +65,18 @@ public class LogInController {
 		
 	@FXML
 	public void loginButtonOnAcction(ActionEvent event) {
+		loginButtonn.getScene().getWindow().hide();
+		try {
+			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menu.fxml"));
+			root1 = (Parent) fxmlLoader.load();
+			stage = new Stage();
+			stage.setScene(new Scene(root1));  
+			stage.setResizable(false);
+			stage.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		if (usernameTextField.getText().isBlank() == false && enterPasswordField.getText().isBlank() == false) {
 			validateLogin();
 		} else {
@@ -96,7 +110,7 @@ public class LogInController {
 				//If query result is not empty means that user passed verification.
 				if (queryResult.next()) {
 					loginMessageLabel.setText("Congratulations!");
-					try {
+				/*try {
 						FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menu.fxml"));
 						Parent root1;
 						root1 = (Parent) fxmlLoader.load();
@@ -106,7 +120,7 @@ public class LogInController {
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
-					}
+					}*/
 				} else {
 					loginMessageLabel.setText("Invalid login. Please try again.");
 				}
