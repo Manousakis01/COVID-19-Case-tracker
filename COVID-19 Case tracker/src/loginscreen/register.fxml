@@ -11,19 +11,19 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1110.0" style="-fx-background-color: #006699;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loginscreen.RegisterController">
    <children>
-      <Text fill="WHITE" layoutX="239.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register a Case" textAlignment="CENTER" wrappingWidth="631.13671875">
+      <Text fill="WHITE" layoutX="237.0" layoutY="113.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Register a Case" textAlignment="CENTER" wrappingWidth="631.13671875">
          <font>
-            <Font size="50.0" />
+            <Font size="30.0" />
          </font>
       </Text>
       <TextField layoutX="114.0" layoutY="157.0" prefHeight="25.0" prefWidth="250.0" />
       <TextField layoutX="429.0" layoutY="157.0" prefHeight="25.0" prefWidth="250.0" />
       <TextField layoutX="745.0" layoutY="157.0" prefHeight="25.0" prefWidth="250.0" />
-      <TextField layoutX="114.0" layoutY="248.0" prefHeight="25.0" prefWidth="250.0" />
-      <TextField layoutX="745.0" layoutY="248.0" prefHeight="25.0" prefWidth="250.0" />
-      <TextField layoutX="114.0" layoutY="348.0" prefHeight="25.0" prefWidth="250.0" />
-      <TextField layoutX="429.0" layoutY="348.0" prefHeight="25.0" prefWidth="250.0" />
-      <TextField layoutX="745.0" layoutY="348.0" prefHeight="25.0" prefWidth="250.0" />
+      <TextField layoutX="113.0" layoutY="233.0" prefHeight="25.0" prefWidth="250.0" />
+      <TextField layoutX="744.0" layoutY="233.0" prefHeight="25.0" prefWidth="250.0" />
+      <TextField layoutX="113.0" layoutY="311.0" prefHeight="25.0" prefWidth="250.0" />
+      <TextField layoutX="428.0" layoutY="311.0" prefHeight="25.0" prefWidth="250.0" />
+      <TextField layoutX="744.0" layoutY="310.0" prefHeight="25.0" prefWidth="250.0" />
       <Label layoutX="114.0" layoutY="131.0" text="First Name" textFill="WHITE">
          <font>
             <Font size="17.0" />
@@ -39,46 +39,46 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="114.0" layoutY="222.0" text="Social Security Number(SSN)" textFill="WHITE">
+      <Label layoutX="113.0" layoutY="207.0" text="Social Security Number(SSN)" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="429.0" layoutY="222.0" text="Date of birth" textFill="WHITE">
+      <Label layoutX="428.0" layoutY="207.0" text="Date of birth" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="746.0" layoutY="222.0" text="Gender" textFill="WHITE">
+      <Label layoutX="745.0" layoutY="207.0" text="Gender" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="114.0" layoutY="322.0" text="Location" textFill="WHITE">
+      <Label layoutX="113.0" layoutY="285.0" text="Location" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="429.0" layoutY="322.0" text="Phone Number" textFill="WHITE">
+      <Label layoutX="428.0" layoutY="285.0" text="Phone Number" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="746.0" layoutY="322.0" text="E-mail address" textFill="WHITE">
+      <Label layoutX="745.0" layoutY="284.0" text="E-mail address" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <DatePicker layoutX="429.0" layoutY="248.0" prefWidth="250.0" />
-      <Button layoutX="492.0" layoutY="410.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" style="-fx-background-color: #ffffff;" text="Register a Case" textFill="#006699">
+      <DatePicker layoutX="428.0" layoutY="233.0" prefWidth="250.0" />
+      <Button layoutX="491.0" layoutY="360.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" style="-fx-background-color: #ffffff;" text="Register a Case" textFill="#006699">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <AnchorPane layoutX="113.0" layoutY="449.0" prefHeight="220.0" prefWidth="882.0" style="-fx-background-color: #ffffff;">
+      <AnchorPane layoutX="114.0" layoutY="404.0" prefHeight="220.0" prefWidth="882.0" style="-fx-background-color: #ffffff;">
          <children>
             <Text fill="#006699" layoutX="125.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Track a Case" textAlignment="CENTER" wrappingWidth="631.13671875">
                <font>
-                  <Font size="50.0" />
+                  <Font size="30.0" />
                </font>
             </Text>
             <Text fill="#006699" layoutX="132.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter below the phone numbers of the people case had contact in the last 14 days">
@@ -93,9 +93,13 @@
                </font></Button>
          </children>
       </AnchorPane>
-      <Circle fill="#006699" layoutX="101.0" layoutY="669.0" radius="45.0" stroke="#006699" strokeType="INSIDE" />
-      <Circle fill="#006699" layoutX="101.0" layoutY="449.0" radius="45.0" stroke="#006699" strokeType="INSIDE" />
-      <Circle fill="#006699" layoutX="995.0" layoutY="449.0" radius="45.0" stroke="#006699" strokeType="INSIDE" />
-      <Circle fill="#006699" layoutX="995.0" layoutY="661.0" radius="45.0" stroke="#006699" strokeType="INSIDE" />
+      <Circle fill="#006699" layoutX="113.0" layoutY="624.0" radius="45.0" stroke="#006699" strokeType="INSIDE" />
+      <Circle fill="#006699" layoutX="113.0" layoutY="404.0" radius="45.0" stroke="#006699" strokeType="INSIDE" />
+      <Circle fill="#006699" layoutX="995.0" layoutY="404.0" radius="45.0" stroke="#006699" strokeType="INSIDE" />
+      <Circle fill="#006699" layoutX="996.0" layoutY="624.0" radius="45.0" stroke="#006699" strokeType="INSIDE" />
+      <AnchorPane prefHeight="720.0" prefWidth="80.0" style="-fx-background-color: #ffffff;" />
+      <AnchorPane layoutX="80.0" prefHeight="80.0" prefWidth="950.0" style="-fx-background-color: #ffffff;" />
+      <AnchorPane layoutX="1030.0" prefHeight="720.0" prefWidth="80.0" style="-fx-background-color: #ffffff;" />
+      <AnchorPane layoutX="80.0" layoutY="640.0" prefHeight="80.0" prefWidth="950.0" style="-fx-background-color: #ffffff;" />
    </children>
 </AnchorPane>
