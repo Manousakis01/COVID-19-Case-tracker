@@ -7,32 +7,39 @@ USE Covid19;
 DROP TABLE `Tested`;
 
 CREATE TABLE `Tested` (
-  `id` mediumint(8) unsigned NOT NULL auto_increment,
   `AMKA` varchar(11) default NULL,
   `firstName` varchar(255) default NULL,
   `lastName` varchar(255) default NULL,
-  `dateOfBirth` varchar(255),
-  `dateOfTest` varchar(255),
+  `dateOfBirth` DATE,
+  `dateOfTest` DATE,
   `location` varchar(50) default NULL,
   `email` varchar(255) default NULL,
   `number` varchar(100) default NULL,
-  PRIMARY KEY (`id`)
-) AUTO_INCREMENT=1;
+  PRIMARY KEY (`AMKA`)
+);
 
-CREATE TABLE positives (
-	`AMKA` varchar(11) default NULL
-) 
+CREATE TABLE Positive (
+	`AMKA` varchar(11) default NULL,
+    PRIMARY KEY (`AMKA`),
+	FOREIGN KEY (`AMKA`) REFERENCES Tested
+);
 
 
 
-CREATE TABLE Meths (
-	`AMKA` varchar(11) default NULL
-)
+CREATE TABLE Meth (
+	`AMKA` varchar(11) default NULL,
+    PRIMARY KEY (`AMKA`),
+	FOREIGN KEY (`AMKA`) REFERENCES Positive
+);
 
 CREATE TABLE Healed (
-	`AMKA` varchar(11) default NULL
-)
+	`AMKA` varchar(11) default NULL,
+    PRIMARY KEY (`AMKA`),
+    FOREIGN KEY (`AMKA`) REFERENCES Positive
+);
 
-CREATE TABLE Deaths (
-	`AMKA` varchar(11) default NULL
-)
+CREATE TABLE Death (
+	`AMKA` varchar(11) default NULL,
+    PRIMARY KEY (`AMKA`),
+    FOREIGN KEY (`AMKA`) REFERENCES Positive
+);
