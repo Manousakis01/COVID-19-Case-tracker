@@ -9,7 +9,7 @@ public class CasesQueries {
 	
 	final String username = "appuser";
 	final String password = "!Test12!";
-	final String DATABASE_URL = "jdbc:mysql://covidlog.servebbs.com:3306/logins";
+	final String DATABASE_URL = "jdbc:mysql://covidlog.servebbs.com:3306/Population";
 	private Connection connection;
 	private PreparedStatement insertTested;
 	private PreparedStatement insertPositive;
