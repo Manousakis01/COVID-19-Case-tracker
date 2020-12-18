@@ -81,12 +81,12 @@
                   <Font size="30.0" />
                </font>
             </Text>
-            <Text fill="#006699" layoutX="132.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter below the phone numbers of the people case had contact in the last 14 days">
+            <Text fill="#006699" layoutX="103.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter below the E-mail of the people that came in contact with the case in the last 14 days">
                <font>
                   <Font size="17.0" />
                </font>
             </Text>
-            <TextField layoutX="316.0" layoutY="103.0" prefHeight="25.0" prefWidth="250.0" />
+            <TextField layoutX="316.0" layoutY="103.0" prefHeight="25.0" prefWidth="250.0" promptText="someone@example.com" />
             <Button layoutX="378.0" layoutY="143.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" style="-fx-background-color: #006699;" text="Contact" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
