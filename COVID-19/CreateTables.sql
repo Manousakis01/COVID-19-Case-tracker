@@ -1,13 +1,13 @@
-CREATE DATABASE Covid19;
+USE CovidDB;
 
-USE Covid19;
-
-
-
-DROP TABLE `Tested`;
+/*DROP TABLE Meth;
+DROP TABLE Healed;
+DROP TABLE Death;
+DROP TABLE Positive;
+DROP TABLE Tested;*/
 
 CREATE TABLE `Tested` (
-  `AMKA` varchar(11) default NULL,
+  `AMKA` varchar(11) NOT NULL,
   `firstName` varchar(255) default NULL,
   `lastName` varchar(255) default NULL,
   `dateOfBirth` DATE,
@@ -19,27 +19,22 @@ CREATE TABLE `Tested` (
 );
 
 CREATE TABLE Positive (
-	`AMKA` varchar(11) default NULL,
+	`AMKA` varchar(11) NOT NULL,
     PRIMARY KEY (`AMKA`),
-	FOREIGN KEY (`AMKA`) REFERENCES Tested
+	FOREIGN KEY (`AMKA`) REFERENCES Tested(AMKA)
 );
-
-
-
 CREATE TABLE Meth (
-	`AMKA` varchar(11) default NULL,
+	`AMKA` varchar(11) NOT NULL,
     PRIMARY KEY (`AMKA`),
-	FOREIGN KEY (`AMKA`) REFERENCES Positive
+	FOREIGN KEY (`AMKA`) REFERENCES Positive(AMKA)
 );
-
 CREATE TABLE Healed (
-	`AMKA` varchar(11) default NULL,
+	`AMKA` varchar(11) NOT NULL,
     PRIMARY KEY (`AMKA`),
-    FOREIGN KEY (`AMKA`) REFERENCES Positive
+    FOREIGN KEY (`AMKA`) REFERENCES Positive(AMKA)
 );
-
 CREATE TABLE Death (
-	`AMKA` varchar(11) default NULL,
+	`AMKA` varchar(11) NOT NULL,
     PRIMARY KEY (`AMKA`),
-    FOREIGN KEY (`AMKA`) REFERENCES Positive
+    FOREIGN KEY (`AMKA`) REFERENCES Positive(AMKA)
 );
