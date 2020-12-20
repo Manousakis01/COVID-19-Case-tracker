@@ -7,34 +7,31 @@ DROP TABLE Positive;
 DROP TABLE Tested;*/
 
 CREATE TABLE `Tested` (
-  `AMKA` varchar(11) NOT NULL,
+	partSSN char (3) not null,
+	SSN varchar(11) generated always as (CONCAT(DATE_FORMAT((dateOfBirth),'%d'),
+    DATE_FORMAT((DateOfBirth),'%m'),DATE_FORMAT((dateOfBirth),'%Y'),partSSN)) not null,
   `firstName` varchar(255) default NULL,
   `lastName` varchar(255) default NULL,
-  `dateOfBirth` DATE,
-  `dateOfTest` DATE,
+  `dateOfBirth` DATE not null,
+  `dateOfTest` DATE not null,
   `location` varchar(50) default NULL,
   `email` varchar(255) default NULL,
-  `number` varchar(100) default NULL,
-  PRIMARY KEY (`AMKA`)
+  `number` varchar(100) default NULL
 );
 
 CREATE TABLE Positive (
-	`AMKA` varchar(11) NOT NULL,
-    PRIMARY KEY (`AMKA`),
-	FOREIGN KEY (`AMKA`) REFERENCES Tested(AMKA)
+	SSN varchar(11) NOT NULL,
+    PRIMARY KEY (SSN)
 );
 CREATE TABLE Meth (
-	`AMKA` varchar(11) NOT NULL,
-    PRIMARY KEY (`AMKA`),
-	FOREIGN KEY (`AMKA`) REFERENCES Positive(AMKA)
+	SSN varchar(11) NOT NULL,
+    PRIMARY KEY (SSN)
 );
 CREATE TABLE Healed (
-	`AMKA` varchar(11) NOT NULL,
-    PRIMARY KEY (`AMKA`),
-    FOREIGN KEY (`AMKA`) REFERENCES Positive(AMKA)
+	SSN varchar(11) NOT NULL,
+    PRIMARY KEY (SSN)
 );
 CREATE TABLE Death (
-	`AMKA` varchar(11) NOT NULL,
-    PRIMARY KEY (`AMKA`),
-    FOREIGN KEY (`AMKA`) REFERENCES Positive(AMKA)
+	SSN varchar(11) NOT NULL,
+    PRIMARY KEY (SSN)
 );
