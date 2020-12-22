@@ -4,12 +4,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.Random;
 
 public class CasesQueries {
 	
 	final String username = "appuser";
 	final String password = "!Test12!";
-	final String DATABASE_URL = "jdbc:mysql://covidlog.servebbs.com:3306/Population";
+	final String DATABASE_URL = "jdbc:mysql://covidlog.servebbs.com:52385/CovidDb";
 	private Connection connection;
 	private PreparedStatement insertTested;
 	private PreparedStatement insertPositive;
@@ -77,7 +78,16 @@ public class CasesQueries {
 		
 		return result;
 	}
-	
+	public void SelfInsertPositive() {
+		int randomNumber = 0;
+		Random rand = new Random();
+		try {
+			var autoInsert = connection.prepareStatement(" INSERT INTO Positive"
+					+ "SELECT SSN FROM Tested LIMIT (?) ");
+			randomNumber = rand.nextInt()*(50)+17;
+			autoInsert.setInt(1,randomNumber )
+		}
+	}
 	/** adds new case in Positive table*/
 	public int addPositive(int AMKA) {
 		int result = 0;
