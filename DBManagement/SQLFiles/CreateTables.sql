@@ -25,13 +25,16 @@ CREATE TABLE Positive (
 );
 CREATE TABLE Meth (
 	SSN varchar(11) NOT NULL,
+    dateOfInsertion DATE,
     PRIMARY KEY (SSN)
 );
 CREATE TABLE Healed (
 	SSN varchar(11) NOT NULL,
+    dateOfHeal DATE,
     PRIMARY KEY (SSN)
 );
 CREATE TABLE Death (
 	SSN varchar(11) NOT NULL,
+    dateOfDeath DATE,
     PRIMARY KEY (SSN)
 );
