@@ -1,4 +1,6 @@
-CREATE TABLE mydb.users (id int NOT NULL AUTO_INCREMENT,
+use CovidDB;
+
+CREATE TABLE Users (id int NOT NULL AUTO_INCREMENT,
 					 first_name varchar(255) NOT NULL,
 					 last_name varchar(255) NOT NULL,
 					 email varchar(255) NOT NULL,
@@ -15,5 +17,3 @@ insert into users (id, first_name, last_name, email, password) values (7, 'Janen
 insert into users (id, first_name, last_name, email, password) values (8, 'Lazar', 'Passy', 'lpassy7@cpanel.net', 'QxoWwkT3MA');
 insert into users (id, first_name, last_name, email, password) values (9, 'Roxane', 'Peak', 'rpeak8@bizjournals.com', 'XvvTnJgl');
 insert into users (id, first_name, last_name, email, password) values (10, 'Erroll', 'Poland', 'epoland9@aol.com', 'ffNwBWxH5');
-                     SELECT * FROM mydb.users;
-                     SELECT email, password FROM mydb.users;

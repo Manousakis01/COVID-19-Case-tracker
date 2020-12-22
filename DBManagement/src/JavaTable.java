@@ -11,10 +11,11 @@ import javax.swing.table.AbstractTableModel;
 
 //Jtable column 0 is ResultSet column 1.
 // Jtabel row 0 is ResultSet row 1.
-public class Users extends AbstractTableModel{
+public class JavaTable extends AbstractTableModel{
 	final String username = "appuser";
 	final String password = "!Test12!";
-	final String DATABASE_URL = "jdbc:mysql://covidlog.servebbs.com:3306/logins";
+	final String LOGINS_URL = "jdbc:mysql://covidlog.servebbs.com:52386/logins";
+	final String POPULATION_URL = "jdbc:mysql://covidlog.servebbs.com:3306/Population";
 	final String SELECT_QUERY = "SELECT * FROM users";
 	private final Connection conn;
 	private ResultSetMetaData metaData;
@@ -26,9 +27,9 @@ public class Users extends AbstractTableModel{
 	private boolean connectedToDatabase = false;
 
 	/**Constructor*/
-	public Users () throws SQLException{
+	public JavaTable () throws SQLException{
 		//Connection
-		conn = DriverManager.getConnection(DATABASE_URL, username, password);
+		conn = DriverManager.getConnection(LOGINS_URL, username, password);
 
 		// Create Statement for query
 		statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
@@ -39,9 +40,9 @@ public class Users extends AbstractTableModel{
 
 		setQuery(SELECT_QUERY);
 	}
-	public Users (String query) throws SQLException{
+	public JavaTable (String query) throws SQLException{
 		//Connection
-		conn = DriverManager.getConnection(DATABASE_URL, username, password);
+		conn = DriverManager.getConnection(LOGINS_URL, username, password);
 
 		// Create Statement for query
 		statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
@@ -130,7 +131,7 @@ public class Users extends AbstractTableModel{
 		// return a value of the specific column and row of ResultSet
 		try {
 			resultset.absolute(row + 1);
-			System.out.print(resultset.getObject(column + 1));
+			System.out.print(resultset.getObject(column + 1) + ", ");
 			return resultset.getObject(column + 1);
 
 		} catch (SQLException sqle) {
@@ -160,8 +161,16 @@ public class Users extends AbstractTableModel{
 				//informs JTable that the model changed
 				fireTableStructureChanged();
 	}
-
-	/** closes Statement and Connection */
+	/**Prints result of the SQL query. */
+	public void printResult(JavaTable obj) {
+		for (int i = 0; i < obj.getRowCount() ;i++ ) {
+			for (int j = 0; j < obj.getColumnCount();j++) {
+				obj.getValueAt(i, j);
+			}
+			System.out.println();
+			}
+	}
+	/** Closes Statement and Connection */
 	public void disconnectFromDtatabase() {
 		if (connectedToDatabase) {
 			//closes Statement and Connection
