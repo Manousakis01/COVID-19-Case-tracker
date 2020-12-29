@@ -1,4 +1,3 @@
-package database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,8 +13,7 @@ import javax.swing.table.AbstractTableModel;
 public class JavaTable extends AbstractTableModel{
 	final String username = "appuser";
 	final String password = "!Test12!";
-	final String LOGINS_URL = "jdbc:mysql://covidlog.servebbs.com:52386/logins";
-	final String POPULATION_URL = "jdbc:mysql://covidlog.servebbs.com:3306/Population";
+	final String DB_URL = "jdbc:mysql://covidlog.servebbs.com:52386/CovidDB";
 	final String SELECT_QUERY = "SELECT * FROM users";
 	private final Connection conn;
 	private ResultSetMetaData metaData;
@@ -29,7 +27,7 @@ public class JavaTable extends AbstractTableModel{
 	/**Constructor*/
 	public JavaTable () throws SQLException{
 		//Connection
-		conn = DriverManager.getConnection(LOGINS_URL, username, password);
+		conn = DriverManager.getConnection(DB_URL, username, password);
 
 		// Create Statement for query
 		statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
@@ -42,7 +40,7 @@ public class JavaTable extends AbstractTableModel{
 	}
 	public JavaTable (String query) throws SQLException{
 		//Connection
-		conn = DriverManager.getConnection(LOGINS_URL, username, password);
+		conn = DriverManager.getConnection(DB_URL, username, password);
 
 		// Create Statement for query
 		statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
