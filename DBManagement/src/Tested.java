@@ -1,8 +1,6 @@
-package database;
-
 public class Tested {
 
-	private int AMKA;
+	private int SSN;
 	private String lastName;
 	private String firstName;
 	private String email;
@@ -15,7 +13,7 @@ public class Tested {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Tested(int AMKA, String firstName, String lastName,
+	public Tested(int SSN, String firstName, String lastName,
 			String dateOfBirth, String dateOfTest, String location, String email, String number) {
 		setAMKA(AMKA);
 		setfirstName(firstName);
@@ -29,7 +27,7 @@ public class Tested {
 	
 	//sets AMKA
 	public void setAMKA(int AMKA) {
-		this.AMKA = AMKA;
+		this.SSN = AMKA;
 	}
 	
 	//sets first name
@@ -68,8 +66,8 @@ public class Tested {
 	}
 	
 	//gets AMKA
-	public int getAMKA() {
-		return AMKA;
+	public int getSSN() {
+		return SSN;
 	}
 	
 	//gets first name

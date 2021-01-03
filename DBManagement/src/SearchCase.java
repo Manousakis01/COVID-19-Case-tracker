@@ -1,5 +1,3 @@
-package database;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -13,7 +11,7 @@ public class SearchCase {
 	
 	final String username = "appuser";
 	final String password = "!Test12!";
-	final String DATABASE_URL = "jdbc:mysql://covidlog.servebbs.com:52385/CovidDb";
+	final String DATABASE_URL = "jdbc:mysql://covidlog.servebbs.com:52386/CovidDB";
 	private Connection connection;
 	private PreparedStatement selectViaAmka;
 	private List<Tested> results;
@@ -35,7 +33,7 @@ public class SearchCase {
 			
 			//creates select statement for Tested table
 			selectViaAmka = connection.prepareStatement("SELECT * FROM Tested WHERE  "
-					+ " AMKA = ?");
+					+ " SSN = 110119411");
 
 		} catch (SQLException sqlException) {
 			sqlException.printStackTrace();
@@ -57,7 +55,7 @@ public class SearchCase {
 			resultSet = selectViaAmka.executeQuery();
 			results = new ArrayList<Tested>();
 			while (resultSet.next()) {
-				results.add(new Tested(resultSet.getInt("AMKA"),
+				results.add(new Tested(resultSet.getInt("SSN"),
 						resultSet.getString("firstName"),
 						resultSet.getString("lastName"),
 						resultSet.getString("dateOfBirth"),
