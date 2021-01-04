@@ -34,7 +34,7 @@ CREATE TABLE Meth (
 );
 CREATE TABLE Healed (
 	SSN varchar(11) NOT NULL,
-<<<<<<< HEAD
+
      dateOfHealed date not null,
 =======
     dateOfHeal DATE,
