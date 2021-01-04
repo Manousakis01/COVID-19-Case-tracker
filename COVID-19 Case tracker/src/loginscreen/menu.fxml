@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
@@ -18,37 +19,37 @@
    <center>
       <AnchorPane fx:id="statsAnchor" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1110.0" BorderPane.alignment="CENTER">
          <children>
-            <Circle fx:id="deathsCircle" fill="WHITE" layoutX="568.0" layoutY="411.0" radius="55.0" stroke="#006699" strokeType="INSIDE" strokeWidth="8.0" AnchorPane.leftAnchor="513.0" AnchorPane.rightAnchor="500.0" />
-            <Circle fx:id="victimsCircle" fill="WHITE" layoutX="564.0" layoutY="145.0" radius="55.0" stroke="#006699" strokeType="INSIDE" strokeWidth="8.0" AnchorPane.leftAnchor="509.0" AnchorPane.rightAnchor="504.0" />
-            <Circle fx:id="recoveredCircle" fill="WHITE" layoutX="568.0" layoutY="278.0" radius="55.0" stroke="#006699" strokeType="INSIDE" strokeWidth="8.0" AnchorPane.leftAnchor="513.0" AnchorPane.rightAnchor="500.0" />
-            <Text fx:id="deathsTxt" fill="#006699" layoutX="544.0" layoutY="434.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deaths" AnchorPane.leftAnchor="544.0" AnchorPane.rightAnchor="531.0234375">
+            <Circle fx:id="deathsCircle" fill="WHITE" layoutX="583.0" layoutY="473.0" radius="70.0" stroke="#006699" strokeType="INSIDE" strokeWidth="8.0" AnchorPane.leftAnchor="513.0" AnchorPane.rightAnchor="457.0" />
+            <Circle fx:id="victimsCircle" fill="WHITE" layoutX="564.0" layoutY="143.0" radius="70.0" stroke="#006699" strokeType="INSIDE" strokeWidth="8.0" AnchorPane.leftAnchor="513.0" AnchorPane.rightAnchor="491.0" />
+            <Circle fx:id="recoveredCircle" fill="WHITE" layoutX="583.0" layoutY="306.0" radius="70.0" stroke="#006699" strokeType="INSIDE" strokeWidth="8.0" AnchorPane.leftAnchor="513.0" AnchorPane.rightAnchor="457.0" />
+            <Text fx:id="deathsTxt" fill="#006699" layoutX="560.0" layoutY="516.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Deaths" AnchorPane.leftAnchor="560.0" AnchorPane.rightAnchor="502.0234375">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
-            <Text fx:id="deathsNumTxt" layoutX="554.0" layoutY="406.0" strokeType="OUTSIDE" strokeWidth="0.0" text="170" AnchorPane.leftAnchor="554.0" AnchorPane.rightAnchor="540.259765625">
+            <Text fx:id="deathsNumTxt" layoutX="547.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="70.0" AnchorPane.leftAnchor="548.0" AnchorPane.rightAnchor="492.0">
                <font>
-                  <Font size="18.0" />
+                  <Font size="20.0" />
                </font>
             </Text>
-            <Text fx:id="victimsTxt" fill="#006699" layoutX="539.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Victims" AnchorPane.leftAnchor="539.0" AnchorPane.rightAnchor="534.1796875">
+            <Text fx:id="victimsTxt" fill="#006699" layoutX="562.0" layoutY="183.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cases" textAlignment="CENTER" AnchorPane.leftAnchor="562.0" AnchorPane.rightAnchor="505.90625">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
-            <Text fx:id="numVictimsTxt" layoutX="548.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="500" AnchorPane.leftAnchor="548.0" AnchorPane.rightAnchor="542.638671875">
+            <Text fx:id="numVictimsTxt" layoutX="548.0" layoutY="128.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="70.0" AnchorPane.leftAnchor="548.0" AnchorPane.rightAnchor="492.0">
                <font>
-                  <Font size="18.0" />
+                  <Font size="20.0" />
                </font>
             </Text>
-            <Text fx:id="recoveredTxt" fill="#006699" layoutX="532.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recovered" AnchorPane.leftAnchor="532.0" AnchorPane.rightAnchor="518.8046875">
+            <Text fx:id="recoveredTxt" fill="#006699" layoutX="548.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recovered" AnchorPane.leftAnchor="548.0" AnchorPane.rightAnchor="489.8046875">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
-            <Text fx:id="recoveredNumTxt" layoutX="552.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" text="200" AnchorPane.leftAnchor="552.0" AnchorPane.rightAnchor="538.9814453125">
+            <Text fx:id="recoveredNumTxt" layoutX="548.0" layoutY="293.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="70.0" AnchorPane.leftAnchor="548.0" AnchorPane.rightAnchor="492.0">
                <font>
-                  <Font size="18.0" />
+                  <Font size="20.0" />
                </font>
             </Text>
             <Text fx:id="welcomeTxt" layoutX="41.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here are some stats about the virus.">
@@ -56,22 +57,40 @@
                   <Font size="25.0" />
                </font>
             </Text>
-            <BarChart fx:id="barChart" barGap="5.0" layoutX="19.0" layoutY="88.0" prefHeight="315.0" prefWidth="416.0" title="Cases">
+            <BarChart fx:id="barChart" barGap="1.0" categoryGap="1.0" layoutX="19.0" layoutY="88.0" prefHeight="315.0" prefWidth="416.0" title="Cases">
               <xAxis>
-                <CategoryAxis side="BOTTOM" />
+                <CategoryAxis label="Date" side="BOTTOM" />
               </xAxis>
               <yAxis>
-                <NumberAxis side="LEFT" />
+                <NumberAxis label="Cases" side="LEFT" />
               </yAxis>
             </BarChart>
-            <PieChart fx:id="pieChart" layoutX="681.0" layoutY="88.0" prefHeight="315.0" prefWidth="416.0" title="cases per region (%)" />
+            <PieChart fx:id="pieChart" layoutX="681.0" layoutY="88.0" prefHeight="315.0" prefWidth="416.0" title="ICU Availability" />
+            <Text fx:id="tcasesTxt" fill="#e11313" layoutX="553.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="60.0" AnchorPane.leftAnchor="553.0" AnchorPane.rightAnchor="497.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="trecoveredTxt" fill="#e11313" layoutX="553.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="60.0" AnchorPane.leftAnchor="553.0" AnchorPane.rightAnchor="497.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Text fx:id="tdeathsTxt" fill="#e11313" layoutX="553.0" layoutY="490.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="60.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </center>
    <left>
       <AnchorPane fx:id="sideAnchor" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="170.0" style="-fx-background-color: #006699;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="statsButton" layoutY="296.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="170.0" style="-fx-background-color: #006699;" text="Stats" textFill="#eeeeee" />
+            <Button fx:id="statsButton" layoutY="296.0" mnemonicParsing="false" onAction="#statsButtonOnAction" prefHeight="42.0" prefWidth="170.0" style="-fx-background-color: #006699;" text="Statistics" textFill="#eeeeee">
+               <padding>
+                  <Insets left="10.0" />
+               </padding></Button>
             <Button fx:id="infoButton" layoutX="2.0" layoutY="252.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="168.0" style="-fx-background-color: #006699;" text="Info" textFill="#eeeeee" />
             <Button fx:id="registerButton" layoutX="2.0" layoutY="338.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="42.0" prefWidth="168.0" style="-fx-background-color: #006699;" text="Register" textFill="#eeeeee" />
             <Button fx:id="updateButton" layoutY="382.0" mnemonicParsing="false" onAction="#updateButtonOnAction" prefHeight="42.0" prefWidth="170.0" style="-fx-background-color: #006699;" text="Update" textFill="#eeeeee" />

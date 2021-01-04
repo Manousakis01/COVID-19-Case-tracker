@@ -56,13 +56,13 @@ public class LogInController {
 	//private Text txtTitle;
 	Parent root1;
 	Stage stage;
-	
+
 	
 
 	/*When login Button is pressed checks if the textfields are empty,
 	 *if they are a message shows up,
 	and if they are not proceed to the method validateLogin */
-		
+
 	@FXML
 	public void loginButtonOnAcction(ActionEvent event) {
 		loginButtonn.getScene().getWindow().hide();

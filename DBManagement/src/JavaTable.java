@@ -1,3 +1,4 @@
+package loginscreen;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,8 +14,9 @@ import javax.swing.table.AbstractTableModel;
 public class JavaTable extends AbstractTableModel{
 	final String username = "appuser";
 	final String password = "!Test12!";
-	final String DB_URL = "jdbc:mysql://covidlog.servebbs.com:52386/CovidDB";
-	final String SELECT_QUERY = "SELECT * FROM users";
+	final String DATABASE_URL = "jdbc:mysql://covidlog.servebbs.com:52386/CovidDB";
+	//final String DATABASE_URL = "jdbc:mysql://10.10.1.3:52386/CovidDB";
+	final String SELECT_QUERY = "SELECT * FROM Tested";
 	private final Connection conn;
 	private ResultSetMetaData metaData;
 	private final Statement statement;
@@ -27,7 +29,7 @@ public class JavaTable extends AbstractTableModel{
 	/**Constructor*/
 	public JavaTable () throws SQLException{
 		//Connection
-		conn = DriverManager.getConnection(DB_URL, username, password);
+		conn = DriverManager.getConnection(DATABASE_URL, username, password);
 
 		// Create Statement for query
 		statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
@@ -40,7 +42,7 @@ public class JavaTable extends AbstractTableModel{
 	}
 	public JavaTable (String query) throws SQLException{
 		//Connection
-		conn = DriverManager.getConnection(DB_URL, username, password);
+		conn = DriverManager.getConnection(DATABASE_URL, username, password);
 
 		// Create Statement for query
 		statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
@@ -50,6 +52,7 @@ public class JavaTable extends AbstractTableModel{
 		connectedToDatabase = true;
 
 		setQuery(query);
+		resultset.first();
 	}
 
 	/** Return type(class) of column.*/
@@ -120,7 +123,7 @@ public class JavaTable extends AbstractTableModel{
 
 	/**Return the value of a specific column and row. */
 	@Override
-	public Object getValueAt(int row, int column) {
+	public String getValueAt(int row, int column) {
 
 		// Ensures the connection
 		if (!connectedToDatabase)
@@ -129,8 +132,8 @@ public class JavaTable extends AbstractTableModel{
 		// return a value of the specific column and row of ResultSet
 		try {
 			resultset.absolute(row + 1);
-			System.out.print(resultset.getObject(column + 1) + ", ");
-			return resultset.getObject(column + 1);
+			//System.out.print(resultset.getObject(column + 1) + ", ");
+			return resultset.getString(column + 1);
 
 		} catch (SQLException sqle) {
 
@@ -138,6 +141,10 @@ public class JavaTable extends AbstractTableModel{
 		}
 
 		return null;
+	}
+	
+	public ResultSet getResultSet() {
+		return resultset;
 	}
 	/** New query */
 	public void setQuery(String query)
