@@ -6,7 +6,7 @@ DROP TABLE Death;
 DROP TABLE Positive;
 DROP TABLE Tested;*/
 
-CREATE TABLE Tested (
+CREATE TABLE preTested (
 	partSSN char (4) not null,
 	SSN varchar(12) generated always as (CONCAT(DATE_FORMAT((dateOfBirth),'%d'),
 		DATE_FORMAT((DateOfBirth),'%m'),DATE_FORMAT((dateOfBirth),'%Y'),partSSN)) not null,

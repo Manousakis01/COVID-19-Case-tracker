@@ -1,14 +1,11 @@
 use CovidDB;
 
-drop view dates;
-
 create view dates as (
 select dateOfTest, Tested.SSN as SSN
  from Positive, Tested 
  where Positive.SSN=Tested.SSN 
  );
  
-insert into Positive 
 select Tested.SSN
 from Tested
 order by  dateOfTest desc
