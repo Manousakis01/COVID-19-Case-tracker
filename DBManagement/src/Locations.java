@@ -1,5 +1,3 @@
-package database;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -7,18 +5,18 @@ import java.sql.SQLException;
 import java.util.Random;
 
 public class Locations {
-	
+
 	final String username = "appuser";
 	final String password = "!Test12!";
 	final String DATABASE_URL = "jdbc:mysql://covidlog.servebbs.com:52386/CovidDB";
 	private Connection connection;
 	private PreparedStatement insertlocation;
-	
+
 	public Locations() {
 		try {
 			connection = DriverManager.getConnection( DATABASE_URL, username, password);
 
-			//creates insert statement for Tested table
+			//creates insert statement for preTested table
 			insertlocation = connection.prepareStatement("UPDATE preTested "
 					+ "SET location = (?) WHERE partSSN = (?) ");
 
@@ -28,7 +26,9 @@ public class Locations {
 		}
 
 	}
-	
+	/**InsertLocations is created to help the creator.
+	 * The method randomly insert data in the table preTested.
+	 */
 	public void InsertLocations() {
 		try {
 			String loc[] = {
@@ -47,36 +47,39 @@ public class Locations {
 					"Evrou",
 					"Thesalonikis"
 			};
-			
-			
+
+
 			JavaTable jt = new JavaTable("SELECT * FROM preTested");
 			int rows = jt.getRowCount();
-			
+			Random generator;
+			int randomIndex;
+			String rand;
+			String str;
 			for (int i = 100; i < rows; i++) {
 				//Generates a random index
-				Random generator = new Random();
+				generator = new Random();
 				//and then selects a random element
-				int randomIndex = generator.nextInt(loc.length);	
+				randomIndex = generator.nextInt(loc.length);
 				//from the table above
-				String rand = loc[randomIndex];						
-				
+				rand = loc[randomIndex];
+
 				//sets parameters and then executes update query
 				insertlocation.setString(1, rand);
-				String str = " " + i;
-				insertlocation.setString(2, str);
+
+				insertlocation.setString(2, Integer.toString(i));
 
 				insertlocation.executeUpdate();
 			}
-			
-			
+			System.out.println("Done!");
+
 		} catch (SQLException sqlException) {
 			sqlException.printStackTrace();
 			close();
 		}
 
-		
+
 	}
-	
+
 	public void close() {
 		try {
 			connection.close();
