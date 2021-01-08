@@ -1,5 +1,3 @@
-package database;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -8,17 +6,18 @@ import java.sql.SQLException;
 
 class SearchCase {
 
-	final String username = "appuser";
-	final String password = "!Test12!";
+	final String USER = "appuser";
+	final String PASSWORD = "!Test12!";
 	final String DATABASE_URL = "jdbc:mysql://covidlog.servebbs.com:52386/CovidDB";
 	private Connection connection;
 	private PreparedStatement selectViaAmka;
+	private ResultSet resultSet = null;
 
 
 	// constructor
 	public SearchCase () {
 		try {
-			connection = DriverManager.getConnection( DATABASE_URL, username, password);
+			connection = DriverManager.getConnection( DATABASE_URL, USER, PASSWORD);
 
 			//creates select statement for Tested table
 			selectViaAmka = connection.prepareStatement("SELECT * FROM Tested WHERE  "
@@ -33,34 +32,19 @@ class SearchCase {
 
 
 	//* when you click search button*/
-	public void searchButtonPerformed(String SSN) {
-		ResultSet resultSet = null;
-
+	public ResultSet searchButtonPerformed(String SSN) {
 		try {
 			// sets ssn
 			selectViaAmka.setString(1, SSN);
 
 			// executeQuery returns a ResultSet with case's info
 			resultSet = selectViaAmka.executeQuery();
-			while (resultSet.next()) {
-				
-				System.out.println(resultSet.getString("SSN"));
-				System.out.println(resultSet.getString("firstname"));
-				
-				// emfanise opoia theleis opoy theleis arkei na to oriseis esy
-				resultSet.getString("lastName");
-				resultSet.getString("dateOfBirth");
-				resultSet.getString("dateOfTest");
-				resultSet.getString("location");
-				resultSet.getString("email");
-				resultSet.getString("number");
-			}
-			resultSet.close();
+
 		} catch (Exception sqlException) {
 			sqlException.printStackTrace();
 			close();
-		} 
-
+		}
+		return resultSet;
 	}
 
 
@@ -68,6 +52,7 @@ class SearchCase {
 	public void close() {
 		try {
 			connection.close();
+			resultSet.close();
 		} catch (SQLException sqlException) {
 			sqlException.printStackTrace();
 		}

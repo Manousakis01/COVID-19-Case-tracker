@@ -19,6 +19,10 @@ CREATE TABLE preTested (
 	number varchar(100) default NULL
 );
 
+CREATE TABLE IF NOT EXISTS Tested AS SELECT SSN, firstName, lastName, dateOfBirth, dateOfTest, location, email, number
+ FROM preTested;
+
+
 CREATE TABLE Positive (
 	SSN varchar(11) NOT NULL,
     PRIMARY KEY (SSN)
