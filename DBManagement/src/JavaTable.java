@@ -1,4 +1,3 @@
-package loginscreen;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -142,7 +141,7 @@ public class JavaTable extends AbstractTableModel{
 
 		return null;
 	}
-	
+
 	public ResultSet getResultSet() {
 		return resultset;
 	}
