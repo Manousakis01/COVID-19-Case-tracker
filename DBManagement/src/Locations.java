@@ -5,16 +5,13 @@ import java.sql.SQLException;
 import java.util.Random;
 
 public class Locations {
-
-	final String username = "appuser";
-	final String password = "!Test12!";
-	final String DATABASE_URL = "jdbc:mysql://covidlog.servebbs.com:52386/CovidDB";
+	Indetifieres in = new Indetifieres();
 	private Connection connection;
 	private PreparedStatement insertlocation;
 
 	public Locations() {
 		try {
-			connection = DriverManager.getConnection( DATABASE_URL, username, password);
+			connection = DriverManager.getConnection(in.getDATABASE_URL(), in.getUSER(), in.getPASSWORD());
 
 			//creates insert statement for preTested table
 			insertlocation = connection.prepareStatement("UPDATE preTested "
@@ -54,7 +51,6 @@ public class Locations {
 			Random generator;
 			int randomIndex;
 			String rand;
-			String str;
 			for (int i = 100; i < rows; i++) {
 				//Generates a random index
 				generator = new Random();

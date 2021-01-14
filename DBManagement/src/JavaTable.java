@@ -11,9 +11,7 @@ import javax.swing.table.AbstractTableModel;
 //Jtable column 0 is ResultSet column 1.
 // Jtabel row 0 is ResultSet row 1.
 public class JavaTable extends AbstractTableModel{
-	final String username = "appuser";
-	final String password = "!Test12!";
-	final String DATABASE_URL = "jdbc:mysql://covidlog.servebbs.com:52386/CovidDB";
+	Indetifieres in = new Indetifieres();
 	//final String DATABASE_URL = "jdbc:mysql://10.10.1.3:52386/CovidDB";
 	final String SELECT_QUERY = "SELECT * FROM Tested";
 	private final Connection conn;
@@ -28,7 +26,7 @@ public class JavaTable extends AbstractTableModel{
 	/**Constructor*/
 	public JavaTable () throws SQLException{
 		//Connection
-		conn = DriverManager.getConnection(DATABASE_URL, username, password);
+		conn = DriverManager.getConnection(in.getDATABASE_URL(), in.getUSER(), in.getPASSWORD());
 
 		// Create Statement for query
 		statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
@@ -41,7 +39,7 @@ public class JavaTable extends AbstractTableModel{
 	}
 	public JavaTable (String query) throws SQLException{
 		//Connection
-		conn = DriverManager.getConnection(DATABASE_URL, username, password);
+		conn = DriverManager.getConnection(in.getDATABASE_URL(), in.getUSER(), in.getPASSWORD());
 
 		// Create Statement for query
 		statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
