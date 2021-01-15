@@ -3,6 +3,7 @@ package loginscreen;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -14,11 +15,14 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 
 import java.util.ResourceBundle;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.io.File;
 import java.io.IOException;
@@ -65,26 +69,26 @@ public class LogInController {
 
 	@FXML
 	public void loginButtonOnAcction(ActionEvent event) {
-		loginButtonn.getScene().getWindow().hide();
-		try {
-			FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menu.fxml"));
-			root1 = (Parent) fxmlLoader.load();
-			stage = new Stage();
-			stage.setScene(new Scene(root1));  
-			stage.setResizable(false);
-			stage.show();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		if (usernameTextField.getText().isBlank() == false && enterPasswordField.getText().isBlank() == false) {
-			validateLogin();
-		} else {
+		if (usernameTextField.getText().isEmpty() && enterPasswordField.getText().isEmpty()) {
 			loginMessageLabel.setText("Please insert your Username and Password");
+		} else { 
+			if (validateLogin()) {
+				loginMessageLabel.setText("Welcome");
+				loginButtonn.getScene().getWindow().hide();
+				try {
+					FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menu.fxml"));
+					root1 = (Parent) fxmlLoader.load();
+					stage = new Stage();
+					stage.setScene(new Scene(root1));  
+					stage.setResizable(false);
+					stage.show();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 	}
-
-	/*exitButtonPressed method just gives the x button the permission to close the window */
+	/**ExitButtonPressed method just gives the x button the permission to close the window */
 	
 	 @FXML
 	 void exitButtonPressed(MouseEvent event) {
@@ -97,38 +101,37 @@ public class LogInController {
 	  *are the same with those in the database.After the verification a message shows
 	  *up and inform the client about the verification status  */
 
-	 public void validateLogin() {
-			DatabaseConnectionWithLogScr connectNow = new DatabaseConnectionWithLogScr();
-			Connection connectDB = connectNow.getConnection();
-			// Verification.
-			String verifyLogin = "SELECT username, password FROM useracc WHERE username =  '" + usernameTextField.getText() + "' AND password ='" + enterPasswordField.getText() + " ' ";
-
+	 public boolean validateLogin() {
+		 boolean flag = false;
+		 loginMessageLabel.setText("Trying to Validate. Please Wait...");
 			try {
-
-				Statement statement = connectDB.createStatement();
-				ResultSet queryResult = statement.executeQuery(verifyLogin);
-				//If query result is not empty means that user passed verification.
-				if (queryResult.next()) {
-					loginMessageLabel.setText("Congratulations!");
-				/*try {
-						FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menu.fxml"));
-						Parent root1;
-						root1 = (Parent) fxmlLoader.load();
-						Stage stage = new Stage();
-						stage.setScene(new Scene(root1));  
-						stage.show();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}*/
-				} else {
-					loginMessageLabel.setText("Invalid login. Please try again.");
+				//Username is Primary Key so the following query returns 0 or 1
+				JavaTable UserSearch = new JavaTable("SELECT COUNT(*) FROM Users WHERE Users.Username = '"
+				+ usernameTextField.getText() + "'" );
+				
+				JavaTable PasswordSearch = new JavaTable("SELECT COUNT(*) FROM Users WHERE Users.Username = '"
+						+ usernameTextField.getText() + "'AND Users.password = '" + enterPasswordField.getText() + "'");
+				
+				int UserExists = Integer.parseInt(UserSearch.getValueAt(0, 0));
+				
+				int LoginSuccess = Integer.parseInt(PasswordSearch.getValueAt(0, 0));
+				
+				if (UserExists == 0) {
+					loginMessageLabel.setText("User does not exist");
 				}
-
-			} catch (Exception e) {
+				else {
+					
+					if (LoginSuccess == 0) { 
+						loginMessageLabel.setText("Incorrect Password");				
+					}
+					else {
+						loginMessageLabel.setText("Welcome!");
+						flag = true;
+					}
+				}
+			} catch (SQLException e) {
 				e.printStackTrace();
-				e.getCause();
 			}
+			return flag;
 	 }
-
 }
