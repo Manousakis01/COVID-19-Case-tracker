@@ -8,6 +8,9 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+
+import loginscreen.RegisterController;
+
 import javax.mail.PasswordAuthentication;
 import javax.mail.Authenticator;
 import javax.mail.Message;
@@ -47,9 +50,12 @@ public class SendEmail {
 				message.setFrom(new InternetAddress(myAccountEmail));
 				message.setRecipient(Message.RecipientType.TO, new InternetAddress(recepient));
 				//Here insert Subject
-				message.setSubject("TO email erxetai apo java");
+				message.setSubject("Covid-19 Case Tracking System");
 				//Here insert the Email text
-				message.setText("helloooo");
+				message.setText("We want to inform you that a friend of your's, who states that met you in the last 14 days, has tested positive today for Covid-19.\r\n"
+						+ "We recommend for your own and global good to get tested for Covid-19.\r\n"
+						+ "						The Covid-19 Tracker \r\n"
+						+ "						 Development team.");
 				return message;
 			} catch (Exception ex) {
 				Logger.getLogger(SendEmail.class.getName()).log(Level.SEVERE, null, ex);
