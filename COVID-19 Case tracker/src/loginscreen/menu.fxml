@@ -108,7 +108,7 @@
                   <Image url="@Images%20-%20Icons/icons8-submit-resume-50.png" />
                </image>
             </ImageView>
-            <Button fx:id="helpButton" layoutX="59.0" layoutY="690.0" mnemonicParsing="false" onAction="#helpButtonOnAction" prefHeight="28.0" prefWidth="82.0" style="-fx-background-color: transparent;" text="Help" textFill="#eeeeee" underline="true" />
+            <Button fx:id="helpButton" layoutX="47.0" layoutY="691.0" mnemonicParsing="false" onAction="#helpButtonOnAction" prefHeight="28.0" prefWidth="82.0" style="-fx-background-color: transparent;" text="Help" textFill="#eeeeee" underline="true" />
             <ImageView fx:id="infoView" fitHeight="28.0" fitWidth="28.0" layoutX="28.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images%20-%20Icons/icons8-info-64.png" />
@@ -119,11 +119,28 @@
                   <Image url="@Images%20-%20Icons/icons8-edit-property-50.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="helpView" fitHeight="24.0" fitWidth="21.0" layoutX="59.0" layoutY="694.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="helpView" fitHeight="24.0" fitWidth="21.0" layoutX="45.0" layoutY="695.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images%20-%20Icons/icons8-help-50.png" />
                </image>
             </ImageView>
+            <Separator fx:id="sep41" layoutX="15.0" layoutY="670.0" prefHeight="9.0" prefWidth="135.0" />
+            <Button fx:id="signOutButton" layoutX="4.0" layoutY="628.0" mnemonicParsing="false" onAction="#signOutButtonOnAction" prefHeight="42.0" prefWidth="164.0" style="-fx-background-color: #006699;" text="Sign out" textFill="#eeeeee" />
+            <ImageView fx:id="updateView1" fitHeight="28.0" fitWidth="28.0" layoutX="28.0" layoutY="635.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images%20-%20Icons/icons8-exit-52.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="89.0" fitWidth="95.0" layoutX="38.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images%20-%20Icons/icons8-user-96.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="55.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="55.21630859375">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </left>
