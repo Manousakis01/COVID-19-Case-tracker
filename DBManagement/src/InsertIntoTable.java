@@ -1,24 +1,21 @@
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class InsertIntoTables {
+public class InsertIntoTable {
 
-	final String username = "appuser";
-	final String password = "!Test12!";
-	final String DATABASE_URL = "jdbc:mysql://covidlog.servebbs.com:52386/CovidDB";
+	Indetifieres in = new Indetifieres ();
 	private Connection connection;
 	private PreparedStatement insertTested;
 	private PreparedStatement insertPositive;
 	private PreparedStatement insertMeth;
 	private PreparedStatement insertHealed;
 	private PreparedStatement insertDeath;
-
-	public InsertIntoTables() {
+	/**The constructor after connecting with database, create a prepareStatement to be executed to the called method. */
+	public InsertIntoTable() {
 		try {
-			connection = DriverManager.getConnection( DATABASE_URL, username, password);
+			connection = DriverManager.getConnection( in.getDATABASE_URL(), in.getUSER(), in.getPASSWORD());
 
 			//creates insert statement for Tested table
 			insertTested = connection.prepareStatement("INSERT INTO Tested "
@@ -48,8 +45,20 @@ public class InsertIntoTables {
 
 	}
 
-	/** adds new case in Tested table*/
-	public void addTested(String SSN, String firstName, String lastName,
+	/** Adds one more row in MySQL Tested table.
+	 * For each covid test (PCR or Rapid) in Tested table will be added new row.
+	 * Sets parameters to prepare STatement and the execute query.
+	 * @param SSN Social Security Number, primare Key
+	 * @param firstName First name of the tested person
+	 * @param lastName Last name of the tested person
+	 * @param dateOfBirth Date of birth
+	 * @param dateOfTest Date of the specific test
+	 * @param location Living county of the tested person
+	 * @param email E-mail of the Tested person, in case them is positive
+	 * 			a e-mail will be sent
+	 * @param number Telephone number of the tested person.
+	 *  */
+	public void Tested(String SSN, String firstName, String lastName,
 			String dateOfBirth, String dateOfTest, String location, String email, String number) {
 
 		try {
@@ -64,7 +73,7 @@ public class InsertIntoTables {
 			insertTested.setString(8, number);
 
 			insertTested.executeUpdate();
-	
+
 
 		} catch (SQLException sqlException) {
 			sqlException.printStackTrace();
@@ -72,9 +81,11 @@ public class InsertIntoTables {
 		}
 
 	}
-	
-	/** adds new case in Positive table*/
-	public void addPositive(String SSN) {
+
+	/** Adds new covid-19 case in Positive table.
+	 * Sets parameters to prepare STatement and the execute query.
+	 * @param SSN Social Security Number, primary key*/
+	public void Positive(String SSN) {
 		try {
 			//sets parameters and then executes insertPositive query
 			insertPositive.setString(1, SSN);
@@ -87,12 +98,15 @@ public class InsertIntoTables {
 		}
 	}
 
-	/** adds new case in Meth table*/
-	public void addMeth(String AMKA, String dateOfMeth) {
+	/** Adds new case in Meth table, each time a person is added in Intesity Care Unit (ICU).
+	 * Sets parameters to prepare STatement and the execute query.
+	 * @param SSN Social Security Number, primary key
+	 * @param dateOfMeth The date of entering ICU*/
+	public void Meth(String SSN, String dateOfMeth) {
 
 		try {
 			//sets parameters and then executes insertMeth query
-			insertMeth.setString(1, AMKA);
+			insertMeth.setString(1, SSN);
 			insertMeth.setString(2, dateOfMeth);
 
 			insertMeth.executeUpdate();
@@ -103,16 +117,17 @@ public class InsertIntoTables {
 		}
 
 	}
-	
-
-	/** adds new case in Healed table*/
-	public void addHealed(String SSN, String dateOfHeal) {
-
+	/** Adds new case in Healed table, each time someone recover covid-19.
+	 * Email will be sent after 14 days to test again.
+	 * Sets parameters to prepare STatement and the execute query.
+	 * @param SSN Social Security Number, primary key
+	 * @param dateOfHeal date of recover.*/
+	public void Healed(String SSN, String dateOfHeal) {
 		try {
 			//sets parameters and then executes insertHeal query
 			insertHealed.setString(1, SSN);
 			insertHealed.setString(2,  dateOfHeal);
-			
+
 			insertHealed.executeUpdate();
 
 		} catch (SQLException sqlException) {
@@ -121,13 +136,15 @@ public class InsertIntoTables {
 		}
 
 	}
-
-	/** adds new case in Death table*/
-	public void addDeath(String AMKA, String dateOfDeath) {
+	/** Adds new death case in Death table.
+	 * Sets parameters to prepare STatement and the execute query.
+	 * @param SSN Social Security Number, primary key
+	 * @param dateOfDeath The last date of a person.*/
+	public void Death(String SSN, String dateOfDeath) {
 
 		try {
 			//sets parameters and then executes insertDeath query
-			insertDeath.setString(1, AMKA);
+			insertDeath.setString(1, SSN);
 			insertDeath.setString(2,  dateOfDeath);
 
 			insertDeath.executeUpdate();
@@ -139,7 +156,7 @@ public class InsertIntoTables {
 
 	}
 
-	
+	/**Close connection with database, MySQL workbench. */
 	public void close() {
 		try {
 			connection.close();
