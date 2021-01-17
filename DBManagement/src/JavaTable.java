@@ -73,7 +73,6 @@ public class JavaTable extends AbstractTableModel{
 	}
 
 	@Override
-	/** Returns rows number */
 	public int getRowCount() {
 
 		// Ensures the connection
@@ -84,7 +83,6 @@ public class JavaTable extends AbstractTableModel{
 	}
 
 	@Override
-	/** Returns number of column*/
 	public int getColumnCount() throws IllegalStateException {
 
 		// Ensures the connection
@@ -100,7 +98,7 @@ public class JavaTable extends AbstractTableModel{
 
 		return 0; // if there were troubles it returns 0
 	}
-	/**Returns the name of a specific column  */
+
 	@Override
 	public String getColumnName(int column) throws IllegalStateException {
 
@@ -117,8 +115,6 @@ public class JavaTable extends AbstractTableModel{
 
 		return " "; // if there were troubles, returns empty as column name
 	}
-
-	/**Return the value of a specific column and row. */
 	@Override
 	public String getValueAt(int row, int column) {
 
@@ -145,29 +141,29 @@ public class JavaTable extends AbstractTableModel{
 	}
 	/** New query */
 	public void setQuery(String query)
-			throws SQLException, IllegalStateException {
+		throws SQLException, IllegalStateException {
 		// Ensures the connection
-				if (!connectedToDatabase)
-					throw new IllegalStateException("Not Connected to Database");
+			if (!connectedToDatabase)
+				throw new IllegalStateException("Not Connected to Database");
 
-				//sets and excecutes query
-				resultset = statement.executeQuery(query);
+			//sets and excecutes query
+			resultset = statement.executeQuery(query);
 
-				//takes metadata for resultSet
-				metaData = resultset.getMetaData();
+			//takes metadata for resultSet
+			metaData = resultset.getMetaData();
 
-				//indicates row count
-				resultset.last(); //go to last row
-				numberOfRows = resultset.getRow(); //returns row number
+			//indicates row count
+			resultset.last(); //go to last row
+			numberOfRows = resultset.getRow(); //returns row number
 
-				//informs JTable that the model changed
-				fireTableStructureChanged();
+			//informs JTable that the model changed
+			fireTableStructureChanged();
 	}
 	/**Prints result of the SQL query. */
-	public void printResult(JavaTable obj) {
-		for (int i = 0; i < obj.getRowCount() ;i++ ) {
-			for (int j = 0; j < obj.getColumnCount();j++) {
-				obj.getValueAt(i, j);
+	public void printResult() {
+		for (int i = 0; i < this.getRowCount() ;i++ ) {
+			for (int j = 0; j < this.getColumnCount();j++) {
+				this.getValueAt(i, j);
 			}
 			System.out.println();
 			}
