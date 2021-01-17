@@ -17,5 +17,6 @@
 	<classpathentry kind="lib" path="C:/Users/User/Desktop/Programming/Tools/javafx-sdk-15.0.1/lib/javafx-swt.jar"/>
 	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX"/>
+	<classpathentry kind="lib" path="C:/Users/leo/Downloads/javax.mail.jar" sourcepath="/ForExams"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

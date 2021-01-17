@@ -5,7 +5,7 @@ select dateOfTest, Tested.SSN as SSN
  from Positive, Tested 
  where Positive.SSN=Tested.SSN 
  );
-INSERT Tested
+INSERT INTO Tested
 SELECT SSN, firstName, lastName, dateOfBirth, dateOfTest, location, email, number 
 FROM preTested;
 
@@ -35,5 +35,3 @@ FROM Tested
 INNER JOIN Meth  ON Meth.SSN = Tested.SSN
 order by rand()
 limit 39;
-
-

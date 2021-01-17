@@ -5,21 +5,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 class SearchCase {
-
-	final String USER = "appuser";
-	final String PASSWORD = "!Test12!";
-	final String DATABASE_URL = "jdbc:mysql://covidlog.servebbs.com:52386/CovidDB";
+	Indetifieres in = new Indetifieres();
 	private Connection connection;
 	private PreparedStatement selectViaAmka;
 	private ResultSet resultSet = null;
 
 
-	// constructor
+	/**The constructor after connecting with database, create a prepareStatement to be executed to the called method. */
 	public SearchCase () {
 		try {
-			connection = DriverManager.getConnection( DATABASE_URL, USER, PASSWORD);
+			connection = DriverManager.getConnection( in.getDATABASE_URL(), in.getUSER(), in.getPASSWORD());
 
-			//creates select statement for Tested table
+			//creates SELECT WHERE statement for Tested table
 			selectViaAmka = connection.prepareStatement("SELECT * FROM Tested WHERE  "
 					+ " SSN = ?");
 
@@ -31,8 +28,9 @@ class SearchCase {
 	}
 
 
-	//* when you click search button*/
-	public ResultSet searchButtonPerformed(String SSN) {
+	/** Execute search in Tested table, query.
+	*@param SSN Social Security Number, primare Key */
+	public ResultSet executeSearch(String SSN) {
 		try {
 			// sets ssn
 			selectViaAmka.setString(1, SSN);
@@ -48,7 +46,7 @@ class SearchCase {
 	}
 
 
-	//* closes connection with DB */
+	/** Close connection with Database, MySQL Workbench. */
 	public void close() {
 		try {
 			connection.close();
