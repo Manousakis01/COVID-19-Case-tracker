@@ -21,7 +21,6 @@
       <TextField fx:id="FirstNameTextField" layoutX="114.0" layoutY="157.0" prefHeight="25.0" prefWidth="250.0" />
       <TextField fx:id="LastNameTextField" layoutX="429.0" layoutY="157.0" prefHeight="25.0" prefWidth="250.0" />
       <TextField fx:id="SSNTextField" layoutX="745.0" layoutY="157.0" prefHeight="25.0" prefWidth="250.0" />
-      <TextField fx:id="PrefectureTextField" layoutX="744.0" layoutY="233.0" prefHeight="25.0" prefWidth="250.0" />
       <TextField fx:id="PhoneTextField" layoutX="113.0" layoutY="311.0" prefHeight="25.0" prefWidth="250.0" />
       <TextField fx:id="MailTextField" layoutX="428.0" layoutY="311.0" prefHeight="25.0" prefWidth="250.0" />
       <Label fx:id="FirstNameLabel" layoutX="114.0" layoutY="131.0" text="First Name" textFill="WHITE">
@@ -104,5 +103,6 @@
       </Label>
       <DatePicker fx:id="BDatePicker" layoutX="112.0" layoutY="234.0" prefWidth="250.0" />
       <ChoiceBox fx:id="resultBox" layoutX="743.0" layoutY="311.0" prefHeight="25.0" prefWidth="250.0" />
+      <ChoiceBox fx:id="PrefectureBox" layoutX="743.0" layoutY="234.0" prefHeight="25.0" prefWidth="250.0" />
    </children>
 </AnchorPane>

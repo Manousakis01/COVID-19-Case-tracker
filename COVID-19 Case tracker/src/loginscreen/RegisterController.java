@@ -15,6 +15,26 @@ public class RegisterController {
 	
 	ObservableList<String> resultList = FXCollections.observableArrayList("Positive","Negative");
 	
+	ObservableList<String> prefecturetList = FXCollections.observableArrayList("Achaea", "Aetolia-Acarnania", "Arcadia", "Argolis", "Arta", "Athens"
+			, "Boeotia"
+			, "Cephalonia", "Chalkidiki", "Chania", "Chios", "Corfu", "Corinthia", "Cyclades"
+			, "Dodecanese", "Drama"
+			, "East Attica", "Elis", "Euboea", "Evros", "Evrytania"
+			, "Florina"
+			, "Grevena"
+			, "Herakleion"
+			, "Imathia", "Ioannina"
+			, "Karditsa", "Kastoria", "Kavala", "Kilkis", "Kozani"
+			, "Laconia", "Larissa", "Lasithi", "Lefkada", "Lesbos"
+			, "Magnesia", "Messenia", "Mount Athos"
+			, "Pella", "Phocis", "Phthiotis", "Pieria", "Piraeus", "Preveza"
+			, "Rethymno", "Rhodope"
+			, "Samos", "Serres"
+			, "Thesprotia", "Thessaloniki", "Trikala" 
+			, "West Attica"
+			, "Xanthi"
+			, "Zakynthos");
+	
 	@FXML
 	private ChoiceBox resultBox;
 	
@@ -37,7 +57,7 @@ public class RegisterController {
 	private DatePicker TDatePicker;
 	
 	@FXML
-	private TextField PrefectureTextField;
+	private ChoiceBox PrefectureBox;
 	
 	@FXML
 	private TextField PhoneTextField;
@@ -91,6 +111,8 @@ public class RegisterController {
 	private void initialize() {
 		resultBox.setValue("Positive or Negative");
 		resultBox.setItems(resultList);
+		PrefectureBox.setValue("Select Prefecture");
+		PrefectureBox.setItems(prefecturetList);
 		
 	}
 	
@@ -122,7 +144,7 @@ public class RegisterController {
 	public boolean FullInfo() {
 		if (FirstNameTextField.getText().isEmpty() || LastNameTextField.getText().isEmpty() 
 				|| SSNTextField.getText().isEmpty() || BDatePicker.getValue() == null
-						|| TDatePicker.getValue() == null || PrefectureTextField.getText().isEmpty()
+						|| TDatePicker.getValue() == null || PrefectureBox.getValue() == "Select Prefecture"
 								|| PhoneTextField.getText().isEmpty() || MailTextField.getText().isEmpty()
 								|| resultBox.getValue() == "Positive or Negative") {
 			if (FirstNameTextField.getText().isEmpty()) {
@@ -160,7 +182,7 @@ public class RegisterController {
 			else {
 				TDateLabel.setStyle("-fx-text-fill: white;");
 			}
-			if (PrefectureTextField.getText().isEmpty()) {
+			if (PrefectureBox.getValue() == "Select Prefecture") {
 				PrefectureLabel.setStyle("-fx-text-fill: red;");
 
 			}
@@ -208,10 +230,10 @@ public class RegisterController {
 		InsertIntoTables Insert = new InsertIntoTables();
 		if (resultBox.getValue() == "Negative") {
 			
-			Insert.addTested(SSNTextField.getText(), FirstNameTextField.getText(), LastNameTextField.getText(), BDatePicker.getValue().toString(), TDatePicker.getValue().toString() , PrefectureTextField.getText(), MailTextField.getText(), PhoneTextField.getText());
+			Insert.addTested(SSNTextField.getText(), FirstNameTextField.getText(), LastNameTextField.getText(), BDatePicker.getValue().toString(), TDatePicker.getValue().toString() , PrefectureBox.getValue().toString(), MailTextField.getText(), PhoneTextField.getText());
 		}
 		else {
-			Insert.addTested(SSNTextField.getText(), FirstNameTextField.getText(), LastNameTextField.getText(), BDatePicker.getValue().toString(), TDatePicker.getValue().toString() , PrefectureTextField.getText(), MailTextField.getText(), PhoneTextField.getText());
+			Insert.addTested(SSNTextField.getText(), FirstNameTextField.getText(), LastNameTextField.getText(), BDatePicker.getValue().toString(), TDatePicker.getValue().toString() , PrefectureBox.getValue().toString(), MailTextField.getText(), PhoneTextField.getText());
 			Insert.addPositive(SSNTextField.getText());
 		}
 	}
