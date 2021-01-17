@@ -81,11 +81,12 @@
                   <Font size="17.0" />
                </font>
             </Text>
-            <TextField layoutX="316.0" layoutY="103.0" prefHeight="25.0" prefWidth="250.0" promptText="someone@example.com" />
-            <Button layoutX="378.0" layoutY="143.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="125.0" style="-fx-background-color: #006699;" text="Contact" textFill="WHITE">
+            <TextField fx:id="MailSendTextField" layoutX="315.0" layoutY="97.0" prefHeight="25.0" prefWidth="250.0" promptText="someone@example.com" />
+            <Button fx:id="MailSendButton" layoutX="378.0" layoutY="143.0" mnemonicParsing="false" onAction="#MailSendButtonOnAction" prefHeight="25.0" prefWidth="125.0" style="-fx-background-color: #006699;" text="Contact" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
+            <Label fx:id="MailSendLabel" alignment="CENTER" layoutX="291.0" layoutY="123.0" prefHeight="18.0" prefWidth="300.0" textAlignment="CENTER" />
          </children>
       </AnchorPane>
       <Circle fill="#006699" layoutX="113.0" layoutY="624.0" radius="45.0" stroke="#006699" strokeType="INSIDE" />

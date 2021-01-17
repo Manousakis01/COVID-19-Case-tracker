@@ -117,15 +117,12 @@ public class InsertIntoTable {
 		}
 
 	}
-
-
 	/** Adds new case in Healed table, each time someone recover covid-19.
 	 * Email will be sent after 14 days to test again.
 	 * Sets parameters to prepare STatement and the execute query.
 	 * @param SSN Social Security Number, primary key
 	 * @param dateOfHeal date of recover.*/
 	public void Healed(String SSN, String dateOfHeal) {
-
 		try {
 			//sets parameters and then executes insertHeal query
 			insertHealed.setString(1, SSN);
@@ -139,7 +136,6 @@ public class InsertIntoTable {
 		}
 
 	}
-
 	/** Adds new death case in Death table.
 	 * Sets parameters to prepare STatement and the execute query.
 	 * @param SSN Social Security Number, primary key

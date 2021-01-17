@@ -1,5 +1,6 @@
 package loginscreen;
 
+import Email.SendEmail;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -74,6 +75,15 @@ public class RegisterController {
 	@FXML
 	private Label resultLabel;
 	
+	@FXML
+	private TextField MailSendTextField;
+	
+	@FXML
+	private Button MailSendButton;
+	
+	@FXML
+	private Label MailSendLabel;
+	
 	
 	
 	
@@ -97,6 +107,17 @@ public class RegisterController {
 		}
 	
 		}
+	@FXML
+	void MailSendButtonOnAction(ActionEvent event) throws Exception {
+		if (MailSendTextField.getText().isEmpty()) {
+			MailSendLabel.setText("Please enter an E-Mail address");
+		}
+		else {
+			MailSendLabel.setText("Preparing to send E-mail");
+			SendEmail.sendMail(MailSendTextField.getText());
+			MailSendLabel.setText("Message sent succesfully");
+		}
+	}
 	
 	public boolean FullInfo() {
 		if (FirstNameTextField.getText().isEmpty() || LastNameTextField.getText().isEmpty() 
