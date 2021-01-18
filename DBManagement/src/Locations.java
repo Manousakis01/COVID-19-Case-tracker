@@ -21,7 +21,6 @@ public class Locations {
 			sqlException.printStackTrace();
 			System.exit(1);
 		}
-
 	}
 	/**InsertLocations is created to help the creator.
 	 * The method randomly insert data in the table preTested.
@@ -29,22 +28,25 @@ public class Locations {
 	public void InsertLocations() {
 		try {
 			String loc[] = {
-					"Arcadia",
-					"Ioannina",
-					"Piraeus",
-					"Magnisia",
-					"Aitolia",
-					"Kyklades",
-					"Serres",
-					"Attiki",
-					"Igoumenitsa",
-					"Ilia",
-					"Trikala",
-					"Pellas",
-					"Evrou",
-					"Thesalonikis"
+					"Achaea", "Aetolia-Acarnania", "Arcadia", "Argolis", "Arta", "Athens",
+					"Boeotia",
+					"Cephalonia", "Chalkidiki", "Chania", "Chios", "Corfu", "Corinthia", "Cyclades",
+					"Dodecanese", "Drama", "East Attica", "Elis", "Euboea", "Evros", "Evrytania",
+					"Florina",
+					"Grevena",
+					"Herakleion",
+					"Imathia", "Ioannina",
+					"Karditsa", "Kastoria", "Kavala", "Kilkis", "Kozani",
+					"Laconia", "Larissa", "Lasithi", "Lefkada", "Lesbos",
+					"Magnesia", "Messenia", "Mount Athos",
+					"Pella", "Phocis", "Phthiotis", "Pieria", "Piraeus", "Preveza",
+					"Rethymno", "Rhodope",
+					"Samos", "Serres",
+					"Thesprotia", "Thessaloniki", "Trikala" ,
+					"West Attica",
+					"Xanthi",
+					"Zakynthos"
 			};
-
 
 			JavaTable jt = new JavaTable("SELECT * FROM preTested");
 			int rows = jt.getRowCount();
@@ -66,16 +68,12 @@ public class Locations {
 
 				insertlocation.executeUpdate();
 			}
-			System.out.println("Done!");
 
 		} catch (SQLException sqlException) {
 			sqlException.printStackTrace();
 			close();
 		}
-
-
 	}
-
 	public void close() {
 		try {
 			connection.close();
