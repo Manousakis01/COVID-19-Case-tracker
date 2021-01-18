@@ -20,8 +20,8 @@ CREATE TABLE preTested (
 );
 
 CREATE TABLE IF NOT EXISTS Tested AS SELECT SSN, firstName, lastName, dateOfBirth, dateOfTest, location, email, number
- FROM preTested;
-
+ FROM preTested
+;
 
 CREATE TABLE Positive (
 	SSN varchar(11) NOT NULL,
@@ -29,28 +29,19 @@ CREATE TABLE Positive (
 );
 CREATE TABLE Meth (
 	SSN varchar(11) NOT NULL,
-<<<<<<< HEAD
 	dateOfMeth date not null,
-=======
     dateOfInsertion DATE,
->>>>>>> 79c1a225ad7dd0e51d1ed776051d80422993d5cf
     PRIMARY KEY (SSN)
 );
 CREATE TABLE Healed (
 	SSN varchar(11) NOT NULL,
-
-     dateOfHealed date not null,
-=======
+	dateOfHealed date not null,
     dateOfHeal DATE,
->>>>>>> 79c1a225ad7dd0e51d1ed776051d80422993d5cf
-    PRIMARY KEY (SSN)
+	PRIMARY KEY (SSN)
 );
 CREATE TABLE Death (
 	SSN varchar(11) NOT NULL,
-<<<<<<< HEAD
     dateOfDeath date not NULL,
-=======
     dateOfDeath DATE,
->>>>>>> 79c1a225ad7dd0e51d1ed776051d80422993d5cf
     PRIMARY KEY (SSN)
 );
