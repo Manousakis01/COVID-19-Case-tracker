@@ -91,7 +91,7 @@ public class UpdateController {
 	    	    		updateButton.setDisable(false);
 						notFound.setText(null);
 	    				SearchCase sc = new SearchCase();
-						searchRS = sc.searchButtonPerformed(ssn.getText());
+						searchRS = sc.executeSearch(ssn.getText());
 						ssntracer = ssn.getText();
 						//sets prompt text to textfields
 						while (searchRS.next()) {
@@ -123,7 +123,7 @@ public class UpdateController {
     private void updateButtonOnAction() {
     	String firstName = null, lastName = null, dob = null, number = null, emailaddress = null, location = null;
     	SearchCase sc = new SearchCase();
-    	searchRS = sc.searchButtonPerformed(ssntracer);
+    	searchRS = sc.executeSearch(ssntracer);
     	try {
         	searchRS.next();
 	    	if(!fname.getText().isBlank()) {
