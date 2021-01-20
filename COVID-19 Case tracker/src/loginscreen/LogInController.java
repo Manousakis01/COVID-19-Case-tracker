@@ -33,6 +33,8 @@ import java.net.URL;
 
 
 public class LogInController {
+	
+	private static String CurrentUserName;
 
 	// declare the items
 
@@ -69,11 +71,12 @@ public class LogInController {
 
 	@FXML
 	public void loginButtonOnAcction(ActionEvent event) {
+		CurrentUserName = usernameTextField.getText();
 		if (usernameTextField.getText().isEmpty() && enterPasswordField.getText().isEmpty()) {
 			loginMessageLabel.setText("Please insert your Username and Password");
 		} else { 
+			loginMessageLabel.setText("Please wait");
 			if (validateLogin()) {
-				loginMessageLabel.setText("Welcome");
 				loginButtonn.getScene().getWindow().hide();
 				try {
 					FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("menu.fxml"));
@@ -103,7 +106,6 @@ public class LogInController {
 
 	 public boolean validateLogin() {
 		 boolean flag = false;
-		 loginMessageLabel.setText("Trying to Validate. Please Wait...");
 			try {
 				//Username is Primary Key so the following query returns 0 or 1
 				JavaTable UserSearch = new JavaTable("SELECT COUNT(*) FROM Users WHERE Users.Username = '"
@@ -125,6 +127,7 @@ public class LogInController {
 						loginMessageLabel.setText("Incorrect Password");				
 					}
 					else {
+						CurrentUserName = usernameTextField.getText();
 						loginMessageLabel.setText("Welcome!");
 						flag = true;
 					}
@@ -133,5 +136,8 @@ public class LogInController {
 				e.printStackTrace();
 			}
 			return flag;
+	 }
+	 public static String getUsername() {
+		 return CurrentUserName;
 	 }
 }

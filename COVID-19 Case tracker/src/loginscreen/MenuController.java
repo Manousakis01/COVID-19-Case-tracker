@@ -62,6 +62,9 @@ public class MenuController implements Initializable{
     
     @FXML
     private Text tdeathsTxt;
+    
+    @FXML
+    private Text UsernameText;
 
     @FXML
     private BarChart<String, Integer> barChart;
@@ -70,7 +73,7 @@ public class MenuController implements Initializable{
     private PieChart pieChart;
 
     Stage stage2;
-   
+    
     Parent root2;
    
 	Stage stage1;
@@ -230,6 +233,7 @@ public class MenuController implements Initializable{
             recoveredText();
             barChart();
             pieChart();
+            UsernameText.setText(LogInController.getUsername());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
