@@ -182,13 +182,13 @@ public class UpdateController {
     }
     //adds case to the right table
     private void addToTable(String statuschange, String SSN, String Date) {
-    	InsertIntoTables iit = new InsertIntoTables();
+    	InsertIntoTable iit = new InsertIntoTable();
     	if(statuschange.equals("Positive")) {
-    		iit.addPositive(SSN);
+    		iit.Positive(SSN);
     	} else if(statuschange.equals("ICU Hospitalized")) {
-    		iit.addMeth(SSN, Date);
+    		iit.Meth(SSN, Date);
     	} else if(statuschange.equals("Dead")) {
-    		iit.addDeath(SSN, Date);
+    		iit.Death(SSN, Date);
     	}
     }
 }
