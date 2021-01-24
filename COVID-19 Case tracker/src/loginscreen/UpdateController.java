@@ -1,4 +1,5 @@
-package loginscreen;
+package com.CovidTracker.maven.CovidTracker;
+
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
