@@ -1,5 +1,4 @@
-package com.CovidTracker.maven.CovidTracker;
-
+package loginscreen;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -138,7 +137,7 @@ public class UpdateController {
 	    	} else {
 	    		lastName = searchRS.getString("lastName");
 	    	}
-	    	// na ta kano ksexorista
+
 	    	if(!birthday.getText().isBlank() && !birthMonth.getText().isBlank() && !birthYear.getText().isBlank()) {
 	    		dob = birthYear.getText() + "-" + birthMonth.getText() + "-" + birthday.getText();
 	    	} else if (birthday.getText().isBlank() && birthMonth.getText().isBlank() && birthYear.getText().isBlank()) {
