@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="1110.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="38.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" text="COVID-19 affects different people in different ways. Most infected people will develop mild to moderate illness and recover without hospitalization." wrappingWidth="737.6640625" />
+      <Text fill="#006699" layoutX="11.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Most common symptoms:" wrappingWidth="307.6640625" />
+      <Text layoutX="35.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" text="fever" wrappingWidth="118.6640625" />
+      <Text fill="#006699" layoutX="23.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Serious symptoms:" wrappingWidth="208.6640625" />
+      <ImageView fitHeight="103.0" fitWidth="262.0" layoutX="913.0" layoutY="516.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images%20-%20Icons/who.png" />
+         </image>
+      </ImageView>
+      <Text fill="#006699" layoutX="508.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Less common symptoms:" wrappingWidth="263.6640625" />
+      <Text layoutX="38.0" layoutY="465.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" text="Seek immediate medical attention if you have serious symptoms.  Always call before visiting your doctor or health facility. " wrappingWidth="1048.6640625" />
+      <Text layoutX="38.0" layoutY="501.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" text="People with mild symptoms who are otherwise healthy should manage their symptoms at home. " wrappingWidth="1048.6640625" />
+      <Text layoutX="38.0" layoutY="538.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" text="On average it takes 5–6 days from when someone is infected with the virus for symptoms to show, however it can take up to 14 days. " wrappingWidth="1048.6640625" />
+      <Text layoutX="38.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" text="loss of speech or movement." wrappingWidth="366.6640625" />
+      <Text layoutX="38.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" text="chest pain or pressure." wrappingWidth="253.6640625" />
+      <Text layoutX="35.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" text="difficulty breathing or shortness of breath." wrappingWidth="393.6640625" />
+      <Text layoutX="520.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" text="aches and pains." wrappingWidth="263.6640625" />
+      <Text layoutX="520.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" text="sore throat." wrappingWidth="142.6640625" />
+      <Text layoutX="520.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" text="diarrhoea" wrappingWidth="263.6640625" />
+      <Text layoutX="520.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" text="conjunctivitis" wrappingWidth="157.6640625" />
+      <Text layoutX="520.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" text="headache" wrappingWidth="167.6640625" />
+      <Text layoutX="520.0" layoutY="360.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" text="loss of taste or smell." wrappingWidth="263.6640625" />
+      <Text layoutX="520.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" text="a rash on skin, or discolouration of fingers or toes." wrappingWidth="458.6640625" />
+      <Text layoutX="35.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" text="dry cough" wrappingWidth="118.6640625" />
+      <Text layoutX="35.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 18;" text="tiredness" wrappingWidth="118.6640625" />
+   </children>
+</AnchorPane>

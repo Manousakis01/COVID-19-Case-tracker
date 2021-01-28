@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="1110.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="31.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="To prevent infection and to slow transmission of COVID-19, do the following:" wrappingWidth="1108.6640625" />
+      <Text layoutX="31.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Wash your hands regularly with soap and water, or clean them with alcohol-based hand rub." wrappingWidth="1063.6640625" />
+      <Text layoutX="31.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Maintain at least 1 metre distance between you and people coughing or sneezing." wrappingWidth="1063.6640625" />
+      <Text layoutX="31.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Avoid touching your face." wrappingWidth="1048.6640625" />
+      <ImageView fitHeight="103.0" fitWidth="262.0" layoutX="913.0" layoutY="516.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images%20-%20Icons/who.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="31.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Cover your mouth and nose when coughing or sneezing." wrappingWidth="1048.6640625" />
+      <Text layoutX="31.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Stay home if you feel unwell." wrappingWidth="1048.6640625" />
+      <Text layoutX="31.0" layoutY="440.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Refrain from smoking and other activities that weaken the lungs." wrappingWidth="1048.6640625" />
+      <Text layoutX="31.0" layoutY="500.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Practice physical distancing by avoiding unnecessary travel and staying away from large groups of people." wrappingWidth="1048.6640625" />
+   </children>
+</AnchorPane>
