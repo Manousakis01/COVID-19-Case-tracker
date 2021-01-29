@@ -13,7 +13,7 @@
       <Text fill="#006699" layoutX="23.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Serious symptoms:" wrappingWidth="208.6640625" />
       <ImageView fitHeight="103.0" fitWidth="262.0" layoutX="913.0" layoutY="516.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Images%20-%20Icons/who.png" />
+            <Image url="@Images - Icons/who.png" />
          </image>
       </ImageView>
       <Text fill="#006699" layoutX="508.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Less common symptoms:" wrappingWidth="263.6640625" />

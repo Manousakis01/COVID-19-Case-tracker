@@ -91,12 +91,12 @@
                <padding>
                   <Insets left="10.0" />
                </padding></Button>
-            <Button fx:id="infoButton" layoutX="2.0" layoutY="252.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="168.0" style="-fx-background-color: #006699;" text="Info" textFill="#eeeeee" />
+            <Button fx:id="infoButton" layoutX="2.0" layoutY="252.0" mnemonicParsing="false" onAction="#infoButtonOnAction" prefHeight="42.0" prefWidth="168.0" style="-fx-background-color: #006699;" text="Info" textFill="#eeeeee" />
             <Button fx:id="registerButton" layoutX="2.0" layoutY="338.0" mnemonicParsing="false" onAction="#registerButtonOnAction" prefHeight="42.0" prefWidth="168.0" style="-fx-background-color: #006699;" text="Register" textFill="#eeeeee" />
             <Button fx:id="updateButton" layoutY="382.0" mnemonicParsing="false" onAction="#updateButtonOnAction" prefHeight="42.0" prefWidth="170.0" style="-fx-background-color: #006699;" text="Update" textFill="#eeeeee" />
             <ImageView fx:id="statsView" fitHeight="28.0" fitWidth="28.0" layoutX="28.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images%20-%20Icons/icons8-combo-chart-50.png" />
+                  <Image url="@Images - Icons/icons8-combo-chart-50.png" />
                </image>
             </ImageView>
             <Separator fx:id="sep2" layoutX="23.0" layoutY="337.0" prefHeight="0.0" prefWidth="135.0" />
@@ -105,35 +105,35 @@
             <Separator fx:id="sep4" layoutX="23.0" layoutY="423.0" prefHeight="0.0" prefWidth="135.0" />
             <ImageView fx:id="registerView" fitHeight="28.0" fitWidth="28.0" layoutX="28.0" layoutY="345.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images%20-%20Icons/icons8-submit-resume-50.png" />
+                  <Image url="@Images - Icons/icons8-submit-resume-50.png" />
                </image>
             </ImageView>
             <Button fx:id="helpButton" layoutX="47.0" layoutY="691.0" mnemonicParsing="false" onAction="#helpButtonOnAction" prefHeight="28.0" prefWidth="82.0" style="-fx-background-color: transparent;" text="Help" textFill="#eeeeee" underline="true" />
             <ImageView fx:id="infoView" fitHeight="28.0" fitWidth="28.0" layoutX="28.0" layoutY="259.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images%20-%20Icons/icons8-info-64.png" />
+                  <Image url="@Images - Icons/icons8-info-64.png" />
                </image>
             </ImageView>
             <ImageView fx:id="updateView" fitHeight="28.0" fitWidth="28.0" layoutX="28.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images%20-%20Icons/icons8-edit-property-50.png" />
+                  <Image url="@Images - Icons/icons8-edit-property-50.png" />
                </image>
             </ImageView>
             <ImageView fx:id="helpView" fitHeight="24.0" fitWidth="21.0" layoutX="45.0" layoutY="695.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images%20-%20Icons/icons8-help-50.png" />
+                  <Image url="@Images - Icons/icons8-help-50.png" />
                </image>
             </ImageView>
             <Separator fx:id="sep41" layoutX="15.0" layoutY="670.0" prefHeight="9.0" prefWidth="135.0" />
             <Button fx:id="signOutButton" layoutX="4.0" layoutY="628.0" mnemonicParsing="false" onAction="#signOutButtonOnAction" prefHeight="42.0" prefWidth="164.0" style="-fx-background-color: #006699;" text="Sign out" textFill="#eeeeee" />
             <ImageView fx:id="updateView1" fitHeight="28.0" fitWidth="28.0" layoutX="28.0" layoutY="635.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images%20-%20Icons/icons8-exit-52.png" />
+                  <Image url="@Images - Icons/icons8-exit-52.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="89.0" fitWidth="95.0" layoutX="38.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images%20-%20Icons/icons8-user-96.png" />
+                  <Image url="@Images - Icons/icons8-user-96.png" />
                </image>
             </ImageView>
             <Text fx:id="UsernameText" fill="WHITE" layoutX="55.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="CENTER" wrappingWidth="55.21630859375">

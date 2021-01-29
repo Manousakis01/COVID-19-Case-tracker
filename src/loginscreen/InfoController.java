@@ -16,8 +16,6 @@ import javafx.fxml.FXMLLoader;
 public class InfoController implements Initializable {
 
 
-
-
     @FXML
     private BorderPane infoBorder;
 
@@ -51,20 +49,20 @@ public class InfoController implements Initializable {
     public void overviewButtonOnAction(ActionEvent event) throws Exception {
         infoBorder.setCenter(overview);
     }
-    
+
     @FXML
     void preventionButtonOnAction(ActionEvent event) {
-    	infoBorder.setCenter(prevention);
+        infoBorder.setCenter(prevention);
     }
-    
+
     @FXML
     public void symptomsButtonOnAction(ActionEvent event) throws Exception {
-    	infoBorder.setCenter(symptoms);
+        infoBorder.setCenter(symptoms);
     }
 
     @FXML
     public void newsroomButtonOnAction(ActionEvent event) throws Exception {
-    	infoBorder.setCenter(newsroom);
+        infoBorder.setCenter(newsroom);
     }
 
     @Override
@@ -72,7 +70,7 @@ public class InfoController implements Initializable {
         try {
             overview = loadScene("overview.fxml");
             newsroom = loadScene("newsroom.fxml");
-        	infoBorder.setCenter(newsroom);
+            infoBorder.setCenter(newsroom);
             prevention = loadScene("prevention.fxml");
             symptoms = loadScene("symptoms.fxml");
         } catch (IOException ex) {

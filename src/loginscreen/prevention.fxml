@@ -13,7 +13,7 @@
       <Text layoutX="31.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Avoid touching your face." wrappingWidth="1048.6640625" />
       <ImageView fitHeight="103.0" fitWidth="262.0" layoutX="913.0" layoutY="516.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Images%20-%20Icons/who.png" />
+            <Image url="@Images - Icons/who.png" />
          </image>
       </ImageView>
       <Text layoutX="31.0" layoutY="260.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Cover your mouth and nose when coughing or sneezing." wrappingWidth="1048.6640625" />

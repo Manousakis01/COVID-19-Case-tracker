@@ -80,7 +80,7 @@
       <Label fx:id="updatedLabel" layoutX="337.0" layoutY="675.0" prefHeight="17.0" prefWidth="397.0" textFill="#0385c6" />
       <ImageView fitHeight="19.0" fitWidth="22.0" layoutX="555.0" layoutY="258.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Downloads/icons8-search-client-48.png" />
+            <Image url="@Images - Icons/icons8-search-client-48.png" />
          </image>
       </ImageView>
    </children>
