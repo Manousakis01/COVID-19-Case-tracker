@@ -3,7 +3,7 @@ Covid-19-Case-tracker is an application made for health organisations, which all
 
 ## Table Of Contents
 * [Requirements](#requirements)
-* [Installation](#installation)
+* [Running](#running)
 * [Usage](#usage)
 * [Contribute](#contribute)
 * [License](#lisence)
