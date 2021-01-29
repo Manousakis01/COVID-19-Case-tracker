@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="633.0" prefWidth="1110.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="loginscreen.NewsroomController">
+   <children>
+      <AnchorPane layoutX="43.0" layoutY="370.0" prefHeight="93.0" prefWidth="1025.0" style="-fx-background-color: #b3e5fc;">
+         <children>
+            <Text fx:id="title4" layoutX="14.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Title 1111111" wrappingWidth="859.4640502929686" AnchorPane.topAnchor="23.0" />
+            <Text fx:id="author4" layoutX="784.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15;" text="author 1" wrappingWidth="219.6640625" />
+            <Text fx:id="date4" layoutX="14.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15;" text="date 1" wrappingWidth="166.6640625" AnchorPane.topAnchor="3.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane accessibleRole="HYPERLINK" layoutX="43.0" layoutY="25.0" prefHeight="93.0" prefWidth="1025.0" style="-fx-background-color: #81d4fa;">
+         <children>
+            <Text fx:id="title1" layoutX="14.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Title 1111111" wrappingWidth="859.4640502929688" AnchorPane.topAnchor="23.0" />
+            <Text fx:id="author1" layoutX="785.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15;" text="author 1" wrappingWidth="219.6640625" />
+            <Text fx:id="date1" layoutX="14.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15;" text="date 1" wrappingWidth="166.6640625" AnchorPane.topAnchor="3.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="43.0" layoutY="140.0" prefHeight="93.0" prefWidth="1025.0" style="-fx-background-color: #4fc3f7;">
+         <children>
+            <Text fx:id="title2" layoutX="14.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Title 1111111" wrappingWidth="859.4640502929686" AnchorPane.topAnchor="23.0" />
+            <Text fx:id="author2" layoutX="784.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15;" text="author 1" wrappingWidth="219.6640625" />
+            <Text fx:id="date2" layoutX="14.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15;" text="date 1" wrappingWidth="166.6640625" AnchorPane.topAnchor="3.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="43.0" layoutY="485.0" prefHeight="93.0" prefWidth="1025.0" style="-fx-background-color: #29b6f6;">
+         <children>
+            <Text fx:id="title5" layoutX="14.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Title 1111111" wrappingWidth="859.4640502929686" AnchorPane.topAnchor="23.0" />
+            <Text fx:id="author5" layoutX="784.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15;" text="author 1" wrappingWidth="219.6640625" />
+            <Text fx:id="date5" layoutX="14.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15;" text="date 1" wrappingWidth="166.6640625" AnchorPane.topAnchor="3.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="43.0" layoutY="255.0" prefHeight="93.0" prefWidth="1025.0" style="-fx-background-color: #80d8ff;">
+         <children>
+            <Text fx:id="title3" layoutX="14.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="Title 1111111" wrappingWidth="859.4640502929686" AnchorPane.topAnchor="23.0" />
+            <Text fx:id="author3" layoutX="784.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15;" text="author 1" wrappingWidth="219.6640625" />
+            <Text fx:id="date3" layoutX="14.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15;" text="date 1" wrappingWidth="166.6640625" AnchorPane.topAnchor="3.0" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="nextButton" layoutX="564.0" layoutY="594.0" mnemonicParsing="false" onAction="#nextButtonOnAction" style="-fx-background-color: transparent;" text="next" textFill="#006699" />
+      <Button fx:id="prevButton" layoutX="498.0" layoutY="594.0" mnemonicParsing="false" onAction="#prevButtonOnAction" style="-fx-background-color: transparent;" text="prev" textFill="#006699" />
+   </children>
+</AnchorPane>

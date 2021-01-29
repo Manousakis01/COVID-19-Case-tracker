@@ -1,14 +1,17 @@
 package loginscreen;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 
-public class newsroomController {
+public class NewsroomController implements Initializable {
 
     @FXML
     private Text title4;
@@ -57,17 +60,21 @@ public class newsroomController {
 
     @FXML
     private Button nextButton;
+        
+    @FXML
+    private Text test;
 
     @FXML
     private Button prevButton;
 
     private int page = 0;
 
+
     List<String> titleList = new ArrayList<String>();
     List<String> urlList = new ArrayList<String>();
     List<String> dateList = new ArrayList<String>();
 
-    @FXML
+    @FXML // sets articles to the previous page
     void prevButtonOnAction(ActionEvent event) {
     	if(page - 5 < 0) {
     		page = 0;
@@ -77,16 +84,18 @@ public class newsroomController {
     	setArticles(page);
     }
 
-    @FXML
+    @FXML //sets articles to the next page
     void nextButtonOnAction(ActionEvent event) {
-    	if(page + 5 < 45) {
+    	if(page + 5 > 45) {
     		page = 0;
+    	} else {
+    	page =  page + 5;
     	}
     	setArticles(page);
     }
 
+    // set articles text
      void setArticles(int page) {
-    	newsInitialize();
     	title1.setText(titleList.get(0 + page));
     	title2.setText(titleList.get(1 + page));
     	title3.setText(titleList.get(2 + page));
@@ -104,14 +113,14 @@ public class newsroomController {
     	author5.setText(urlList.get(4 + page));
     }
 
-    @FXML
-    void newsInitialize() {
-        News news = new News();
-        String request = news.sendRequest();
-        titleList = news.title(request);
-        dateList = news.date(request);
-        urlList = news.url(request);
-        setArticles(0);
-    }
+     @Override
+     public void initialize(URL location, ResourceBundle resources) {
+    	 News news = new News();
+         String request = news.sendRequest();
+         titleList = news.title(request);
+         dateList = news.date(request);
+         urlList = news.url(request);
+         setArticles(0);
+     }
 }
 

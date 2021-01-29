@@ -7,8 +7,12 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
+
 import org.json.JSONArray; 
-import org.json.JSONObject; 
+import org.json.JSONObject;
+
+import javafx.fxml.FXML; 
 
 
 
@@ -18,7 +22,7 @@ public class News {
 	//sends an http request using an API
 	public String sendRequest() {
 		HttpRequest request = HttpRequest.newBuilder()
-				.uri(URI.create("https://covid-19-news.p.rapidapi.com/v1/covid?q=covid&lang=en&sort_by=relevancy&sort_by=date&media=True"))
+				.uri(URI.create("https://covid-19-news.p.rapidapi.com/v1/covid?q=covid&lang=en&sort_by=date&search_in=title&sources=nytimes.com%2C%20theguardian.com%2Cwsj.com&media=True"))
 				.header("x-rapidapi-key", "2ec5601ca4msh1275d4576f466cbp1f5053jsn243b8a584e3e")
 				.header("x-rapidapi-host", "covid-19-news.p.rapidapi.com")
 				.method("GET", HttpRequest.BodyPublishers.noBody())
@@ -33,25 +37,23 @@ public class News {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.print(response.body().toString());
 		status = response.statusCode();
 		return response.body();
 	}
 
 	//returns a list of titles of articles
-	public static List<String> title(String response) {
-		JSONObject jsonObj = new JSONObject(response.toString());
-		System.out.println(response.toString());
+	 public List<String> title(String response) {
+		JSONObject jsonObj = new JSONObject(response);
 		List<String> titleList = new ArrayList<String>();
 		JSONArray jsonArray = jsonObj.getJSONArray("articles");
-		for(int i = 0 ; i < jsonArray.length() ; i++){
+		for(int i = 0 ; i < jsonArray.length(); i++){
 		    titleList.add(jsonArray.getJSONObject(i).optString("title"));
 		}
 		return titleList;
 	}
 
 	//returns a list of urls of articles
-	public static List<String> url(String response) {
+	 public List<String> url(String response) {
 		JSONObject jsonObj = new JSONObject(response.toString());
 		List<String> urlList = new ArrayList<String>();
 		JSONArray jsonArray = jsonObj.getJSONArray("articles");
@@ -62,7 +64,7 @@ public class News {
 	}
 
 	//returns a list with dates of articles
-	public static List<String> date(String response) {
+	 public List<String> date(String response) {
 		JSONObject jsonObj = new JSONObject(response.toString());
 		List<String> dateList = new ArrayList<String>();
 		JSONArray jsonArray = jsonObj.getJSONArray("articles");
@@ -73,7 +75,7 @@ public class News {
 	}
 
 	//returns the status code of the request
-	private int getStatusCode() {
+	 int getStatusCode() {
 		return status;
 	}
 }
