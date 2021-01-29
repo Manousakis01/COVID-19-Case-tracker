@@ -34,5 +34,5 @@ Pull requests are welcomed. For major changes, please open an issue first to dis
 * Kolonas Michalis
 * Lekatsas Nikolas
 * Manousakis Manos
-* Mara Leonida
+* Mara Leonidha
 * Omirolis Aggelos
