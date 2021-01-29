@@ -12,7 +12,7 @@ Covid-19-Case-tracker is an application made for health organisations, which all
 ## Requirements
 In order to use this appplication you will need to have **Java SE Development Kit 15.0.1**.
  
-## Installation
+## Running
 Double-click on the generated CovidTrackerApp.jar or run java -jar CovidTrackerApp.jar
 
 ## Usage
